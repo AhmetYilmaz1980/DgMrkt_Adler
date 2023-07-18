@@ -1,5 +1,8 @@
 package com.euroTech.pages;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
-    // Kendi branshimdaki defgisikliklerin remoot reprostory ye push edilmesi
+    @FindBy(xpath = "//div[text()=' Congratulation! Login Successfully']")
+    public WebElement posLoginMessage;
 }
