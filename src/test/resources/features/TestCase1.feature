@@ -4,8 +4,7 @@ Feature: Login DgMrkt on Homepage
     Given The user is on the home page
     When The user clicks to My Account
     Then The user should be able to see and click Login button
-    When The user enters correct "<email>" and "<password>"
-    And The user clicks black login(submit) button
+    When The user enters correct "<email>" ,"<password>" and clicks black login button
     Then The user should be able to login and see positive login message
 
 
