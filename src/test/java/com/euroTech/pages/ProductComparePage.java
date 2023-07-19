@@ -1,5 +1,5 @@
 package com.euroTech.pages;
 
-public class ProductComparePage {
+public class ProductComparePage extends BasePage{
 
 }
