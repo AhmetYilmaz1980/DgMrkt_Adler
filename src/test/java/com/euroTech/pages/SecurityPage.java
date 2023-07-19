@@ -25,6 +25,7 @@ public class SecurityPage extends BasePage{
         submitButton.click();
         BrowserUtils.waitFor(2);
         newsLetterClosedButton.click();
+
     }
 
 
