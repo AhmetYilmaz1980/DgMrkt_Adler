@@ -12,6 +12,12 @@ public abstract class BasePage {
         PageFactory.initElements(Driver.get(),this);
     }
 
+    @FindBy(xpath = "// span [text()='My Account']")
+    public WebElement myAccountButton;
+
+    @FindBy (xpath = "// a[text()='Login']")
+    public WebElement loginButton;
+
     @FindBy(xpath= "//span[text()='My Account']")
     public WebElement accountButton;
 
@@ -23,7 +29,5 @@ public abstract class BasePage {
         }catch(Exception e){
             Driver.get().findElement(By.xpath("//a[text()='My Account']/../../li/a[text()='"+buttonName+"']")).click();}
     }
-
-
 
 }
