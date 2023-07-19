@@ -9,4 +9,9 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//span[.='Televisions']")
     public WebElement televisions;
 
+    @FindBy(xpath = "//p[.='151.43€']//../p")
+    public WebElement priceTV;
+
+
+
 }

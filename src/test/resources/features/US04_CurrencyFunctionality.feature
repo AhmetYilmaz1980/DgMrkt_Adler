@@ -11,11 +11,11 @@ Feature: Currency Function
     Then The user should be able to login and see positive login message
     When The user clicks currency button and selects "<currency>"
     And  The user should close the advertisement tab
-    Then The user scrolls down the page and should be able to see products with currency of choice
+    Then The user scrolls down the page and should be able to see products with "<symbol>" of "<currency>"
 
 
     Examples:
-      | email          | password     |      currency            |
-      | ali1@gmail.com | galatasaray. |      Euro                |
-      | ali1@gmail.com | galatasaray. |      Pound Sterling      |
-      |ali1@gmail.com  | galatasaray. |      US Dollar           |
+      | email          | password     | currency       | symbol |
+      | ali1@gmail.com | galatasaray. | Euro           | €      |
+      | ali1@gmail.com | galatasaray. | Pound Sterling | $      |
+      | ali1@gmail.com | galatasaray. | US Dollar      | £      |

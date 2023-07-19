@@ -5,6 +5,7 @@ import com.euroTech.pages.SecurityPage;
 import com.euroTech.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class US04_CurrencyFuncitionality_Step_Defs {
 
@@ -28,13 +29,21 @@ public class US04_CurrencyFuncitionality_Step_Defs {
     @When("The user should close the advertisement tab")
     public void the_user_should_close_the_advertisement_tab() {
         securityPage.newsLetterClosedButton.click();
-
     }
 
-
-    @Then("The user scrolls down the page and should be able to see products with currency of choice")
-    public void the_user_scrolls_down_the_page_and_should_be_able_to_see_products_with_currency_of_choice() {
-        BrowserUtils.scrollToElement(homePage.televisions);
-        BrowserUtils.waitFor(3);
+    @Then("The user scrolls down the page and should be able to see products with {string} of {string}")
+    public void the_user_scrolls_down_the_page_and_should_be_able_to_see_products_with_of(String currency, String symbol) {
+       BrowserUtils.scrollToElement(homePage.televisions);
+        if(currency.contains("Euro")) {
+            Assert.assertTrue(homePage.priceTV.getText().contains("€"));;}
+        else if(currency.contains(("Pound"))){
+            Assert.assertTrue(homePage.priceTV.getText().contains("£")); ;
+        } else if (currency.contains("Dollar")) {
+            Assert.assertTrue(homePage.priceTV.getText().contains("$"));;
+        }
     }
 }
+
+
+
+
