@@ -21,7 +21,6 @@ public class US16_ProductCompareFunction_Step_Defs {
 
     @When("The user scroll to Products and hover over to {string} Product")
     public void the_user_scroll_to_products_and_hover_over_to_product(int i) {
-
         healthBeautyPage.click(i);
     }
 

@@ -13,4 +13,3 @@ Feature: Product Compare Function
     Examples:
       |Category                    |Product      |
       |  Health & Beauty           |   2         |
-      |                            |             |
