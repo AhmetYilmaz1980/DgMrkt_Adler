@@ -4,6 +4,7 @@ import com.euroTech.pages.Health_BeautyPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class US16_ProductCompareFunction_Step_Defs {
 
@@ -31,6 +32,7 @@ public class US16_ProductCompareFunction_Step_Defs {
 
     @And("The user should be able to see success message")
     public void the_user_should_be_able_to_see_success_message() {
+        Assert.assertTrue(healthBeautyPage.succesMessage.isDisplayed());
     }
 
 

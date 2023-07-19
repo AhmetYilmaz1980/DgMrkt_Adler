@@ -24,17 +24,18 @@ public class Health_BeautyPage extends BasePage {
     @FindBy(xpath = "(//a[text()='Networking'])[1]")
     public WebElement networkingButton;
 
-    @FindBy(xpath = "//a[@id='compare-total']")
-    public WebElement compareTotalNumber;
-
     @FindBy(xpath = "//div[@class='product-thumb']" )
     public List <WebElement> beautyProduct;
 
     @FindBy(xpath = "//button[@class='button-compare']")
     public List <WebElement> beautyCompareButton;
 
-    @FindBy(xpath = "(//button[@class='button-compare'])[2]")
-    public WebElement capsuleCompareButton;
+    @FindBy(xpath = "//a[@id='compare-total']")
+    public WebElement compareTotalNumber;
+
+    @FindBy(xpath = "//div[text()=' to your ']")
+    public WebElement succesMessage;
+
 
 
     public void openProductPage(String categ){
