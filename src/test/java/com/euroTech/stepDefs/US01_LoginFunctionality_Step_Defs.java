@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginFunctionality_Step_Defs {
+public class US01_LoginFunctionality_Step_Defs {
 
     HomePage homePage=new HomePage();
 
