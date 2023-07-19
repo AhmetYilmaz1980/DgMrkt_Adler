@@ -3,6 +3,7 @@ package com.euroTech.stepDefs;
 import com.euroTech.pages.HomePage;
 import com.euroTech.pages.LoginPage;
 import com.euroTech.utilities.BrowserUtils;
+import com.euroTech.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,7 +28,7 @@ public class US01_LoginFunctionality_Step_Defs {
 
     @When("The user enters correct {string} ,{string} and clicks black login button")
     public void theUserEntersCorrectAndClicksBlackLoginButton(String email, String password) {
-        loginPage.login(email, password);
+        loginPage.login(email,password);
         BrowserUtils.waitFor(2);
     }
 

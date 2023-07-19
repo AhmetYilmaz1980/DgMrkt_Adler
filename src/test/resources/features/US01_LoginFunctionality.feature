@@ -1,5 +1,4 @@
 Feature: Login DgMrkt on Homepage
-
   @login
   Scenario Outline: Positive Login Test
     Given The user is on the home page
