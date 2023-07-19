@@ -9,54 +9,39 @@ import java.util.List;
 
 public class Health_BeautyPage extends BasePage {
 
-    @FindBy(xpath = "//span[text()='Category']")
-    public WebElement categoryButton;
+    TVAccessoriesPage tvAccessoriesPage = new TVAccessoriesPage();
+    TelevisionsPages televisionsPages = new TelevisionsPages();
+    NetworkingPage networkingPage = new NetworkingPage();
+    CategoryPage categoryPage = new CategoryPage();
+
 
     @FindBy(xpath = "(//a[text()='Health & Beauty'])[1]")
     public WebElement healthandBeautyButton;
 
-    @FindBy(xpath = "(//a[text()='Televisions'])[1]")
-    public WebElement televisionsButton;
-
-    @FindBy(xpath = "(//a[text()='TV Accessories'])[1]")
-    public WebElement tvAccessoriesButton;
-
-    @FindBy(xpath = "(//a[text()='Networking'])[1]")
-    public WebElement networkingButton;
-
-    @FindBy(xpath = "//div[@class='product-thumb']" )
-    public List <WebElement> beautyProduct;
-
     @FindBy(xpath = "//button[@class='button-compare']")
     public List <WebElement> beautyCompareButton;
-
-    @FindBy(xpath = "//a[@id='compare-total']")
-    public WebElement compareTotalNumber;
 
     @FindBy(xpath = "//div[text()=' to your ']")
     public WebElement succesMessage;
 
 
-
-    public void openProductPage(String categ){
-        BrowserUtils.hover(categoryButton);
+    public void openProductPage(String category){
+        BrowserUtils.hover(categoryPage.categoryButton);
         BrowserUtils.waitFor(2);
-        if(categ.contains("Health & Beauty")){
+        if(category.contains("Health & Beauty")){
             healthandBeautyButton.click();
-        } else if (categ.contains("Televisions")) {
-            televisionsButton.click();
-        } else if (categ.contains("TV Accessories")) {
-            tvAccessoriesButton.click();
-        } else if (categ.contains("Networking")) {
-            networkingButton.click();
+        } else if (category.contains("Televisions")) {
+            televisionsPages.televisionsButton.click();
+        } else if (category.contains("TV Accessories")) {
+            tvAccessoriesPage.tvAccessoriesButton.click();
+        } else if (category.contains("Networking")) {
+            networkingPage.networkingButton.click();
         }
-
-
     }
 
-    public void click(int num){
+    public void click(int product){
         BrowserUtils.waitFor(2);
-        BrowserUtils.clickWithJS(beautyCompareButton.get(num-1));
+        BrowserUtils.clickWithJS(beautyCompareButton.get(product-1));
     }
 
 }

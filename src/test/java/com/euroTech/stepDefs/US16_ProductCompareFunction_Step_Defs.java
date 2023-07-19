@@ -17,13 +17,13 @@ public class US16_ProductCompareFunction_Step_Defs {
     }
 
     @Then("The user clicks to {string} button")
-    public void the_user_clicks_to_button(String s) {
-        healthBeautyPage.openProductPage(s);
+    public void the_user_clicks_to_button(String category) {
+        healthBeautyPage.openProductPage(category);
     }
 
     @When("The user scroll to Products and hover over to {string} Product")
-    public void the_user_scroll_to_products_and_hover_over_to_product(String i) {
-        healthBeautyPage.click(Integer.parseInt(i));
+    public void the_user_scroll_to_products_and_hover_over_to_product(String product) {
+        healthBeautyPage.click(Integer.parseInt(product));
     }
 
     @Then("The user should be able to see and click Compare this Product button")
