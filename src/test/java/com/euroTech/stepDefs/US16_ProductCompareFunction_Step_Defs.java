@@ -1,6 +1,7 @@
 package com.euroTech.stepDefs;
 
 import com.euroTech.pages.Health_BeautyPage;
+import com.euroTech.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,13 +26,14 @@ public class US16_ProductCompareFunction_Step_Defs {
         healthBeautyPage.click(Integer.parseInt(i));
     }
 
-    @Then("The user should be able to see and click {string} button")
+    @Then("The user should be able to see and click Compare this Product button")
     public void the_user_should_be_able_to_see_and_click_button() {
 
     }
 
     @And("The user should be able to see success message")
     public void the_user_should_be_able_to_see_success_message() {
+        BrowserUtils.waitFor(2);
         Assert.assertTrue(healthBeautyPage.succesMessage.isDisplayed());
     }
 
