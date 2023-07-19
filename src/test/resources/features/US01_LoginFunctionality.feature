@@ -13,7 +13,7 @@ Feature: Login DgMrkt on Homepage
       |    ali1@gmail.com               |    galatasaray.     |
 
 
-   @wip
+  @wip
   Scenario Outline: Negative Login Test
     Given The user is on the home page
     When The user clicks to My Account
@@ -30,3 +30,4 @@ Feature: Login DgMrkt on Homepage
       |   umut51088@gmail.com      |                     |
       |                            |      2574dGlogin    |
       |                            |                     |
+
