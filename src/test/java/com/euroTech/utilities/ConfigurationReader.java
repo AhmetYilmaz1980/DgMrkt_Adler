@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
-public class ConfigurationReader {
+public class  ConfigurationReader {
     private static Properties properties;
 
     static {
