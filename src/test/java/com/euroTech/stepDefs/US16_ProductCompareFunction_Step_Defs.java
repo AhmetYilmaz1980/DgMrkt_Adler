@@ -20,8 +20,8 @@ public class US16_ProductCompareFunction_Step_Defs {
     }
 
     @When("The user scroll to Products and hover over to {string} Product")
-    public void the_user_scroll_to_products_and_hover_over_to_product(int i) {
-        healthBeautyPage.click(i);
+    public void the_user_scroll_to_products_and_hover_over_to_product(String i) {
+        healthBeautyPage.click(Integer.parseInt(i));
     }
 
     @Then("The user should be able to see and click {string} button")

@@ -55,6 +55,8 @@ public class Health_BeautyPage extends BasePage {
 
     public void click(int num){
         BrowserUtils.waitFor(2);
+        BrowserUtils.scrollToElement(beautyProduct.get(num-1));
+        BrowserUtils.waitFor(2);
         BrowserUtils.hover(beautyProduct.get(num-1));
         BrowserUtils.waitFor(2);
         beautyCompareButton.get(num-1).click();

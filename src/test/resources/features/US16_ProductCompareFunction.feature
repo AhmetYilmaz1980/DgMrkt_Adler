@@ -1,8 +1,9 @@
 Feature: Product Compare Function
 
+  @wip2
   Scenario Outline: The user navigate the Product Compare Page
 
-    @wip2
+
     Given The user is on the home page
     When The user hover over to Category button
     Then The user clicks to "<Category>" button
@@ -12,4 +13,6 @@ Feature: Product Compare Function
 
     Examples:
       |Category                    |Product      |
-      |  Health & Beauty           |   2         |
+      |  Health & Beauty           |   2
+
+      |
