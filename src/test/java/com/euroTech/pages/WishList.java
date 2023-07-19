@@ -5,7 +5,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class WishList extends BasePage {
 
-    @FindBy(id = "wishlist-total")
-    public WebElement wishIcon;
+    @FindBy(xpath = "//*[@href='https://dgmarkt.com/index.php?route=account/wishlist']")
+    public WebElement wishList;
+
+    @FindBy(xpath = "//*[@id='content']//table/tbody/tr[1]//td[2]")
+    public WebElement firstProduct;
 
 }

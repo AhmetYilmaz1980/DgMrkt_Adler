@@ -1,3 +1,4 @@
+@wish
 Feature: Wish List Test
 
   Background:
@@ -5,4 +6,5 @@ Feature: Wish List Test
 
     Scenario: The number of added items should be displayed on the Like icon before entering the wish list.
       When The user logs in to My Account
-      Then The user verify that product number appears in the Like icon
+      And The user clicks on wish list button
+      Then The user verifies the product is in wish list
