@@ -29,6 +29,7 @@ public class LoginFunctionality_Step_Defs {
     @When("The user enters correct {string} ,{string} and clicks black login button")
     public void theUserEntersCorrectAndClicksBlackLoginButton(String email, String password) {
         loginPage.login(email,password);
+        BrowserUtils.waitFor(2);
     }
 
     @Then("The user should be able to login and see positive login message")
@@ -44,5 +45,6 @@ public class LoginFunctionality_Step_Defs {
     public void the_user_shouldn_t_be_able_to_login_and_see_negative_login_message() {
         BrowserUtils.verifyElementDisplayed(loginPage.negLoginMessage);
     }
+
 
 }
