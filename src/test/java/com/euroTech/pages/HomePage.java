@@ -1,8 +1,11 @@
 package com.euroTech.pages;
 
 import com.euroTech.utilities.BrowserUtils;
+import com.euroTech.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.concurrent.TimeUnit;
 
 public class HomePage extends BasePage {
     @FindBy(xpath = "//div[text()=' Congratulation! Login Successfully']")
@@ -19,9 +22,6 @@ public class HomePage extends BasePage {
     @FindBy(linkText = "Networking")
     public WebElement subNetworking;
 
-    public void hoverCategory() {
-        BrowserUtils.hover(Category);
-    }
 
     public void clickSubCategory(String subcategory) {
         switch (subcategory) {
@@ -38,8 +38,8 @@ public class HomePage extends BasePage {
                 subNetworking.click();
                 break;
         }
-
-        }
-
+        Driver.get().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
+
+}
 

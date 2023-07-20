@@ -15,11 +15,11 @@ Feature: As a user, I should be able to bring the products in the price range
     And  The user slides the right end of the price slider to the right
     Then The user sees that the min value of the price slider has increased
     Examples:
-      | subcategory     |
-      | Health_Beauty |
-      | Televisions     |
-      | TV_Accessories  |
-      | Networking      |
+      | subcategory    |
+      | Health_Beauty  |
+      | Televisions    |
+      | TV_Accessories |
+      | Networking     |
 
   Scenario Outline:  The user can scroll the price slider to set a specific price range
     Given The user on the homepage
