@@ -19,6 +19,11 @@ public class SecurityPage extends BasePage{
     @FindBy(xpath = "//a[@class='a-close-newsletter']")
     public WebElement newsLetterClosedButton;
 
+
+    @FindBy(xpath = "//div[@class='popup-content']")
+    public WebElement newsLetterButton;
+
+
     public void entry(){
         email.sendKeys(ConfigurationReader.get("username"));
         password.sendKeys(ConfigurationReader.get("password"));
