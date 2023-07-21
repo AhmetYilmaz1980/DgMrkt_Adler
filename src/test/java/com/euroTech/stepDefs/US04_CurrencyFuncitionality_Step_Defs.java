@@ -2,6 +2,7 @@ package com.euroTech.stepDefs;
 
 import com.euroTech.pages.*;
 import com.euroTech.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -73,6 +74,17 @@ public class US04_CurrencyFuncitionality_Step_Defs {
     @Then("The user should be able to see that the order has been placed message")
     public void the_user_should_be_able_to_see_that_the_order_has_been_placed_message() {
         BrowserUtils.verifyElementDisplayed(orderPlacedPage.orderPlacedMessage);
+    }
+
+    @Then("The user scrolls down the page and should be able to see products")
+    public void theUserScrollsDownThePageAndShouldBeAbleToSeeProducts() {
+        BrowserUtils.scrollToElement(homePage.productTV);
+    }
+
+    @And("The user scrolls up to currency button and selects {string}")
+    public void theUserScrollsUpToCurrencyButtonAndSelects(String currency) {
+        BrowserUtils.scrollToElement(homePage.currencyButton);
+        homePage.setCurrency(currency);
     }
 }
 
