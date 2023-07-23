@@ -9,10 +9,4 @@ import org.openqa.selenium.support.FindBy;
 
 public class CategoryPage extends BasePage {
 
-   public void clickSubMenu(String subMenuName){
-      WebElement subCategory = Driver.get().findElement(By.xpath("//a[text()='"+subMenuName+"']"));
-       subCategory.click();
-   }
-
-
 }
