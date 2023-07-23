@@ -1,6 +1,6 @@
 Feature: Login DgMrkt on Homepage
 
-@login
+  @login
   Scenario Outline: Positive Login Test
     Given The user is on the home page
     When The user clicks to My Account
@@ -14,7 +14,8 @@ Feature: Login DgMrkt on Homepage
       | ali1@gmail.com | galatasaray. |
 
 
-@ngtv
+
+
   Scenario Outline: Negative Login Test
     Given The user is on the home page
     When The user clicks to My Account
