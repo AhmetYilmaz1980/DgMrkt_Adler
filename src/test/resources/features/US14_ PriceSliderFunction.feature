@@ -17,9 +17,9 @@ Feature: As a user, I should be able to bring the products in the price range
     Examples:
       | subcategory   |
       | Health_Beauty |
-      #| Televisions    |
-      #| TV_Accessories |
-      #| Networking     |
+      | Televisions    |
+      | TV_Accessories |
+      | Networking     |
 
   Scenario Outline:  The user can scroll the price slider to set a specific price range
     Given The user on the homepage

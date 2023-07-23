@@ -4,13 +4,10 @@ import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.concurrent.TimeUnit;
-
 public class HomePage extends BasePage {
     @FindBy(xpath = "//div[text()=' Congratulation! Login Successfully']")
     public WebElement posLoginMessage;
-
     @FindBy(xpath = " //span[text()='Category']")
     public WebElement Category;
     @FindBy(linkText = "Health & Beauty")
@@ -21,9 +18,7 @@ public class HomePage extends BasePage {
     public WebElement subTVAccessories;
     @FindBy(linkText = "Networking")
     public WebElement subNetworking;
-
-
-    public void clickSubCategory(String subcategory) {
+    public void clickSubCategory(String subcategory) { // SubCategory lere click yapmak icin olusturuldu.
         switch (subcategory) {
             case "Health_Beauty":
                 subHealthBeauty.click();
