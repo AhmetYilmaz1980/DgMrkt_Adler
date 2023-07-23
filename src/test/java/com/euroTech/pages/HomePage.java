@@ -14,4 +14,9 @@ public class HomePage extends BasePage{
         BrowserUtils.hover(categoryBox);
     }
 
+      public void clickSubMenu(String subMenuName){
+      WebElement subCategory = Driver.get().findElement(By.xpath("//a[text()='"+subMenuName+"']"));
+       subCategory.click();
+   }
+
 }
