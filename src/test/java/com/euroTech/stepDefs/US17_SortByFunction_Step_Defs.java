@@ -25,7 +25,7 @@ public class US17_SortByFunction_Step_Defs {
     }
     @Then("The user clicks subcategory {string}")
     public void the_user_clicks_subcategory(String subMenuName) {
-        categoryPage.clickSubMenu(subMenuName);
+        homePage.clickSubMenu(subMenuName);
 
     }
 
