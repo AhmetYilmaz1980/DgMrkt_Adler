@@ -3,12 +3,11 @@ package com.euroTech.pages;
 import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-public class CategoryPage extends BasePage {
+public class SubCategorysPage extends BasePage {
     Actions moveSlider = new Actions(Driver.get());
     @FindBy(className = "filter-price") //Price Slider i görmek icin
     public WebElement priceSlider;
