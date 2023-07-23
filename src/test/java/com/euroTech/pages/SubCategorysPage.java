@@ -26,10 +26,12 @@ public class SubCategorysPage extends BasePage{
 
     // elif's view icon
 
+
     public void clickProductViewIcon(String viewOption) {
 
         WebElement viewIcon = Driver.get().findElement(By.xpath("//button[@class='btn btn-default btn-custom-view btn-" + viewOption + "']"));
         viewIcon.click();
+        BrowserUtils.waitFor(2);
     }
 
 
