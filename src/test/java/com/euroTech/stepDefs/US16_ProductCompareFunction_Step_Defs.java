@@ -39,7 +39,6 @@ public class US16_ProductCompareFunction_Step_Defs {
 
     @Then("The user should be able to see and click Compare this Product button")
     public void the_user_should_be_able_to_see_and_click_button() {
-
     }
 
     @And("The user should be able to see success message")
@@ -62,8 +61,10 @@ public class US16_ProductCompareFunction_Step_Defs {
     @Then("The user should be able to see the {string} they want to compare on the Product Comparison page")
     public void the_user_should_be_able_to_see_the_they_want_to_compare_on_the_product_comparison_page(String product) {
         BrowserUtils.waitFor(3);
-      //  Assert.assertEquals(productComparePage.getProductString(Integer.parseInt(product)),productComparePage.firstProduct.getText());
-        BrowserUtils.verifyElementDisplayed(productComparePage.firstProduct);
+        productComparePage.getProduct(Integer.parseInt(product));
+        productComparePage.getCompareProduct();
+        productComparePage.equalsProduct(Integer.parseInt(product));
+
     }
 
     @When("The user click Show button and choose {int}")
@@ -73,9 +74,13 @@ public class US16_ProductCompareFunction_Step_Defs {
     }
     @When("The user should be able to hover over to {string} Product")
     public void the_user_should_be_able_to_hover_over_to_product(String product) {
-       healthBeautyPage.clickCompareButton(Integer.parseInt(product));
+            healthBeautyPage.clickCompareButton(Integer.parseInt(product));
     }
 
+
+    @Then("The user click the {string} button for first Product")
+    public void the_user_click_the_button_for_first_product(String string) {
+    }
 
 
 
