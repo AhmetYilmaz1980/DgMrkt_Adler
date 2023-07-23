@@ -8,60 +8,71 @@ import io.cucumber.java.en.When;
 
 public class US14_PriceSlider_Step_Defs {
     HomePage homePage = new HomePage();
-    SubCategorysPage subCategory = new SubCategorysPage();
-
+    SubCategorysPage subCategorysPage = new SubCategorysPage();
+    // Test Case 1
     @When("The user hover over category and select {string}.")
     public void the_user_hover_over_category_and_select(String subcategory) {
-        BrowserUtils.hover(homePage.Category);
-        homePage.clickSubCategory(subcategory);
+        homePage.hoverOverCategory();
+       // BrowserUtils.hover(homePage.Category);
+        homePage.clickSubMenu(subcategory);
     }
 
     @Then("The user sees price slider.")
     public void the_user_sees_price_slider() {
-        BrowserUtils.verifyElementDisplayed(subCategory.priceSlider);
+        BrowserUtils.verifyElementDisplayed(subCategorysPage.priceSlider);
     }
 
     @When("The user slides the left end of the price slider to the right.")
     public void the_user_slides_the_left_end_of_the_price_slider_to_the_right() {
-        subCategory.moveSlider(subCategory.sliderLeft, "right");
+        subCategorysPage.moveSlider(subCategorysPage.sliderLeft, "right");
     }
 
     @Then("The user sees that the min value of the price slider has increased.")
     public void the_user_sees_that_the_min_value_of_the_price_slider_has_increased() {
-        subCategory.verifyMinValueIncreased();
+        subCategorysPage.verifyMinValueIncreased();
     }
 
     @When("The user slides the left end of the price slider to the left.")
     public void the_user_slides_the_left_end_of_the_price_slider_to_the_left() {
-        subCategory.moveSlider(subCategory.sliderLeft, "right");
-        subCategory.moveSlider(subCategory.sliderLeft, "right");
-        subCategory.moveSlider(subCategory.sliderLeft, "left");
+        subCategorysPage.moveSlider(subCategorysPage.sliderLeft, "right");
+        subCategorysPage.moveSlider(subCategorysPage.sliderLeft, "right");
+        subCategorysPage.moveSlider(subCategorysPage.sliderLeft, "left");
     }
 
     @Then("The user sees that the min value of the price slider has decreased.")
     public void the_user_sees_that_the_min_value_of_the_price_slider_has_decreased() {
-        subCategory.verifyMinValueDecreased();
+        subCategorysPage.verifyMinValueDecreased();
     }
 
     @When("The user slides the right end of the price slider to the left.")
     public void the_user_slides_the_right_end_of_the_price_slider_to_the_left() {
-        subCategory.moveSlider(subCategory.sliderRight, "left");
+        subCategorysPage.moveSlider(subCategorysPage.sliderRight, "left");
     }
 
     @Then("The user sees that the max value of the price slider has decreased.")
     public void the_user_sees_that_the_max_value_of_the_price_slider_has_decreased() {
-        subCategory.verifyMaxValueDecreased();
+        subCategorysPage.verifyMaxValueDecreased();
     }
 
     @When("The user slides the right end of the price slider to the right.")
     public void the_user_slides_the_right_end_of_the_price_slider_to_the_right() {
-        subCategory.moveSlider(subCategory.sliderRight, "left");
-        subCategory.moveSlider(subCategory.sliderRight, "left");
-        subCategory.moveSlider(subCategory.sliderRight, "right");
+        subCategorysPage.moveSlider(subCategorysPage.sliderRight, "left");
+        subCategorysPage.moveSlider(subCategorysPage.sliderRight, "left");
+        subCategorysPage.moveSlider(subCategorysPage.sliderRight, "right");
     }
 
     @Then("The user sees that the max value of the price slider has increased.")
     public void the_user_sees_that_the_max_value_of_the_price_slider_has_increased() {
-        subCategory.verifyMaxValueIncreased();
+        subCategorysPage.verifyMaxValueIncreased();
+    }
+    // Test Case 2
+
+    @When("The user scrolls the price slider to a specific price range {int} and {int}")
+    public void the_user_scrolls_the_price_slider_to_a_specific_price_range_and(Integer int1, Integer int2) {
+subCategorysPage.moveSliderForLoopMetod(20);
+    }
+    @Then("The products displayed should be within the selected price range")
+    public void the_products_displayed_should_be_within_the_selected_price_range() {
+
     }
 }
