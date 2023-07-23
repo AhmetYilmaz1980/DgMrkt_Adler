@@ -11,6 +11,7 @@ public class US06_WishList_Step_Defs {
     @When("The user logs in to My Account")
     public void the_user_logs_in_to_my_account() {
 
+
     }
     @When("The user clicks on wish list button")
     public void the_user_clicks_on_wish_list_button() {
