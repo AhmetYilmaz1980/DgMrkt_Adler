@@ -56,7 +56,7 @@ public class US03_RegisterFunctionality_StepDefs {
     @Then("Verify the warning message {string}")
     public void verify_the_warning_message(String message) throws IOException {
         BrowserUtils.waitFor(4);
-        BrowserUtils.getScreenshot(message);
+        // BrowserUtils.getScreenshot(message);
         String actualMessage = registerAccountPage.assertion(message);
         assertEquals(message,actualMessage);
     }
@@ -69,7 +69,7 @@ public class US03_RegisterFunctionality_StepDefs {
     public void verify_the_warning_message_below_the_screen(String message) throws IOException {
         BrowserUtils.scrollToElement(registerAccountPage.privacyPolicy);
         BrowserUtils.waitFor(4);
-        BrowserUtils.getScreenshot(message);
+        // BrowserUtils.getScreenshot(message);
         String actualMessage = registerAccountPage.assertion(message);
         assertEquals(message,actualMessage);
     }
