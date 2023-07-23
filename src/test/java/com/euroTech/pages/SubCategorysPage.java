@@ -21,7 +21,7 @@ public class SubCategorysPage extends BasePage{
 
     public void sortByVerify(String sortByVerify) {
         WebElement actuel = Driver.get().findElement(By.xpath("//option[text()='"+sortByVerify+"']"));
-        Assert.assertEquals(sortByVerify,actuel);
+        Assert.assertEquals(sortByVerify,actuel.getText());
     }
 
     // elif's view icon
