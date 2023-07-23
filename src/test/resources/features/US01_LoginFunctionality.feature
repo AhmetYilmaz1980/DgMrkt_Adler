@@ -1,4 +1,5 @@
 Feature: Login DgMrkt on Homepage
+
   @login
   Scenario Outline: Positive Login Test
     Given The user is on the home page
@@ -9,8 +10,9 @@ Feature: Login DgMrkt on Homepage
 
 
     Examples:
-      |      email                      |      password       |
-      |    ali1@gmail.com               |    galatasaray.     |
+      | email          | password     |
+      | ali1@gmail.com | galatasaray. |
+
 
 
 
@@ -23,10 +25,10 @@ Feature: Login DgMrkt on Homepage
 
 
     Examples:
-      |      email                 |      password       |
-      |    umut51088@gmail.com     |       Test123       |
-      |   alicabbar@gmail.com      |      2574dGlogin    |
-      |   alicabbar@gmail.com      |      Test123        |
-      |   umut51088@gmail.com      |                     |
-      |                            |      2574dGlogin    |
-      |                            |                     |
+      | email               | password    |
+      | umut51088@gmail.com | Test123     |
+      | alicabbar@gmail.com | 2574dGlogin |
+      | alicabbar@gmail.com | Test123     |
+      | umut51088@gmail.com |             |
+      |                     | 2574dGlogin |
+      |                     |             |
