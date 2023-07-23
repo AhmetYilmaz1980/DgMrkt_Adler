@@ -19,4 +19,15 @@ public class HomePage extends BasePage{
     public WebElement cartIcon;
 
 
+
+    public void hoverOverCategory(){
+        WebElement categoryBox = Driver.get().findElement(By.xpath("//span[text()='Category']"));
+        BrowserUtils.hover(categoryBox);
+    }
+
+      public void clickSubMenu(String subMenuName){
+      WebElement subCategory = Driver.get().findElement(By.xpath("//a[text()='"+subMenuName+"']"));
+       subCategory.click();
+   }
+
 }
