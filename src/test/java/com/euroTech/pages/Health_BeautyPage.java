@@ -19,14 +19,11 @@ public class Health_BeautyPage extends BasePage {
     @FindBy(xpath = "//option[text()='Default']")
     public WebElement sortBydefault;
 
-
     @FindBy(xpath = "//option[text()='Name (A - Z)']")
     public WebElement nameAZ;
 
     @FindBy(xpath = "//option[text()='Name (Z - A)']")
     public WebElement nameZA;
-
-
 
     @FindBy(xpath = " //option[text()='Price (Low > High)']")
     public WebElement priceLowHigh;
