@@ -1,6 +1,6 @@
 Feature: Navigate to Account Page
 
-  @wip
+
   Scenario: Navigate to Account Page
     Given The user is on the home page
     Then The user clicks "Login" from MyAccountButton
