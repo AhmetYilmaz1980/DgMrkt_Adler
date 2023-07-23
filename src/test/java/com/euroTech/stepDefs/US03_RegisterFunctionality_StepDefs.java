@@ -3,9 +3,7 @@ package com.euroTech.stepDefs;
 import com.euroTech.pages.RegisterAccountPage;
 import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 
 import java.io.IOException;
