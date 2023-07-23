@@ -1,4 +1,5 @@
 Feature: Login DgMrkt on Homepage
+
   @login
   Scenario Outline: Positive Login Test
     Given The user is on the home page
@@ -13,7 +14,7 @@ Feature: Login DgMrkt on Homepage
       | feymangulgun91@gmail.com | glgn_91  |
 
 
-  @wip
+
   Scenario Outline: Negative Login Test
     Given The user is on the home page
     When The user clicks to My Account
