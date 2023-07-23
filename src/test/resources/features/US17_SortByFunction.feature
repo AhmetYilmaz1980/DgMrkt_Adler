@@ -7,7 +7,7 @@ Feature: Cat-Subcategory Sort By Function
     When The user hover over in category menu
     Then The user clicks subcategory "<subMenuName>"
     And The user should be able to see sort by in  on the subCategory page "<sortBy>"
-    And The user selected "<sortbyverify>"
+    And The user must have selected "<sortbyverify>"
     Examples:
       | subMenuName     | sortBy             | sortbyverify       |
       | Health & Beauty | Default            | Default            |
@@ -46,9 +46,4 @@ Feature: Cat-Subcategory Sort By Function
       | Networking      | Rating (Lowest)    | Rating (Lowest)    |
       | Networking      | Model (A - Z)      | Model (A - Z)      |
       | Networking      | Model (Z - A)      | Model (Z - A)      |
-
-
-
-
-
 

@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.concurrent.TimeUnit;
+
 public class SubCategorysPage extends BasePage{
     @FindBy(id = "input-sort")
     public WebElement sortByBox;
@@ -21,7 +23,7 @@ public class SubCategorysPage extends BasePage{
 
     public void sortByVerify(String sortByVerify) {
         WebElement actuel = Driver.get().findElement(By.xpath("//option[text()='"+sortByVerify+"']"));
-        Assert.assertEquals(sortByVerify,actuel);
+        Assert.assertEquals(sortByVerify,actuel.getText());
     }
 
 
