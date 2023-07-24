@@ -40,7 +40,7 @@ Feature: Edit-Update Account Information
       | ali                               | ali                               | ali1@gmail.com | 01         | Telephone must be between 3 and 32 characters!  |
 
   @B7DGMRT-30
-  Scenario Outline: Negative TESTS_2 - User should be able to get warning Message or POP-UP Warning message
+  Scenario Outline: Negative TESTS_2 - As a User I should be able to get warning Message or POP-UP Warning message
     Given The User on the Edit Information Page
     When The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
     Then The message contains "<message>"
