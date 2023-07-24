@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class SubCategorysPage extends BasePage {
+    Actions actions = new Actions(Driver.get());
     @FindBy(id = "input-sort")
     public WebElement sortByBox;
     @FindBy(className = "filter-price") //Price Slider i görmek icin
@@ -41,50 +42,34 @@ public class SubCategorysPage extends BasePage {
 
     }
 
-    public void moveSlider(WebElement slider, String direction) {
-        Actions moveSlider = new Actions(Driver.get()); //yukari class düzeyine  aldim
+    public void moveSlider(String priceSlider, String direction) {
+        WebElement slider;
+        if (priceSlider.equals("sliderLeft") ) {
+            slider = sliderLeft;
+        } else {slider = sliderRight;}
+
+        BrowserUtils.waitFor(3);
         switch (direction) {
             case "right":
-                moveSlider.dragAndDropBy(slider, 100, 0).build().perform();
-                BrowserUtils.waitForPageToLoad(10);
+                actions.dragAndDropBy(slider, 100, 0).build().perform();
                 break;
             case "left":
-                BrowserUtils.waitFor(3);
-                moveSlider.dragAndDropBy(slider, -100, 0).build().perform();
-                BrowserUtils.waitForPageToLoad(10);
+                actions.dragAndDropBy(slider, 100, 0).build().perform();
+                actions.dragAndDropBy(slider, -100, 0).build().perform();
+                break;
         }
     }
-
-    //    public void moveSliderForLoopMetod (WebElement slider, String direction,int price) {
-//        if (direction == "left") {
-//            for (int i=0;i<price;i++){
-//                slider.sendKeys(Keys.ARROW_LEFT);
-//                BrowserUtils.waitFor(1);
-//                //Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-//            }
-//        }else if (direction=="right"){
-//            for (int i=0;i<price;i++){
-//                slider.sendKeys(Keys.ARROW_RIGHT);
-//                BrowserUtils.waitFor(1);
-//            }
-//     }
-//    }
-    public void moveSliderForLoopMetod(Integer min) {
-        int stepsToRight = 10;
-        int pixelsPerStep = 1;
-
-        Actions actions = new Actions(Driver.get());
-        actions.clickAndHold(sliderLeft).build().perform();
-
-        for (int i = 0; i < stepsToRight; i++) {
-            actions.moveByOffset(pixelsPerStep, 0).perform();
-//            if (min==Integer.valueOf(inputMinValue.getAttribute("value"))){
-//                break;
-//            }
+    public void verifyPriceSliderChange(String priceSlider, String direction){
+        WebElement slider;
+        if (priceSlider.equals("sliderLeft")& direction.equals("right"))  {
+            verifyMinValueIncreased();
+        } else if (priceSlider.equals("sliderLeft")& direction.equals("left")){
+            verifyMinValueDecreased();
+        } else if (priceSlider.equals("sliderRight")& direction.equals("left")) {
+            verifyMaxValueDecreased();
+        } else if (priceSlider.equals("sliderRight")& direction.equals("right")) {
+            verifyMaxValueIncreased();
         }
-
-        actions.release().build().perform();
-
     }
 
     public void verifyMinValueIncreased() {
@@ -92,29 +77,30 @@ public class SubCategorysPage extends BasePage {
         BrowserUtils.waitForPageToLoad(10);
         Integer ersteValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("AersteValue = " + ersteValue);
-        moveSlider(sliderLeft, "right");
+        actions.dragAndDropBy(sliderLeft, 100, 0).build().perform();
         BrowserUtils.waitForPageToLoad(10);
         Integer secondValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue < secondValue);
-        Driver.get().navigate().refresh();
+
     }
 
     public void verifyMinValueDecreased() {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(10);
-        moveSlider(sliderLeft, "right");
-        BrowserUtils.waitFor(3);
-        moveSlider(sliderLeft, "right");
+        actions.dragAndDropBy(sliderLeft, 100, 0).build().perform();
+        //moveSlider("sliderLeft", "right");
+        //moveSlider("sliderLeft", "right");
         BrowserUtils.waitFor(3);
         Integer ersteValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("BersteValue = " + ersteValue);
-        moveSlider(sliderLeft, "left");
+        actions.dragAndDropBy(sliderLeft, -50, 0).build().perform();
+        //moveSlider("sliderLeft", "left");
         BrowserUtils.waitFor(3);
         Integer secondValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue > secondValue);
-        Driver.get().navigate().refresh();
+
     }
 
     public void verifyMaxValueDecreased() {
@@ -122,31 +108,29 @@ public class SubCategorysPage extends BasePage {
         BrowserUtils.waitForPageToLoad(5);
         Integer ersteValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
         System.out.println("CersteValue = " + ersteValue);
-        moveSlider(sliderRight, "left");
-        BrowserUtils.waitForPageToLoad(5);
+        actions.dragAndDropBy(sliderRight, -100, 0).build().perform();
+        BrowserUtils.waitForPageToLoad(10);
         Integer secondValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue > secondValue);
-        Driver.get().navigate().refresh();
-
     }
 
     public void verifyMaxValueIncreased() {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(10);
-        moveSlider(sliderRight, "left");
-        BrowserUtils.waitFor(3);
-        moveSlider(sliderRight, "left");
+        actions.dragAndDropBy(sliderRight, -100, 0).build().perform();
         BrowserUtils.waitFor(3);
         Integer ersteValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
         System.out.println("DersteValue = " + ersteValue);
-        moveSlider(sliderRight, "right");
+        actions.dragAndDropBy(sliderRight, 50, 0).build().perform();
         BrowserUtils.waitFor(3);
         Integer secondValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue < secondValue);
-        Driver.get().navigate().refresh();
     }
+
+
+
 
 
 }

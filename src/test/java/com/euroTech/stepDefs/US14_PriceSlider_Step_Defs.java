@@ -13,7 +13,6 @@ public class US14_PriceSlider_Step_Defs {
     @When("The user hover over category and select {string}.")
     public void the_user_hover_over_category_and_select(String subcategory) {
         homePage.hoverOverCategory();
-       // BrowserUtils.hover(homePage.Category);
         homePage.clickSubMenu(subcategory);
     }
 
@@ -22,57 +21,15 @@ public class US14_PriceSlider_Step_Defs {
         BrowserUtils.verifyElementDisplayed(subCategorysPage.priceSlider);
     }
 
-    @When("The user slides the left end of the price slider to the right.")
-    public void the_user_slides_the_left_end_of_the_price_slider_to_the_right() {
-        subCategorysPage.moveSlider(subCategorysPage.sliderLeft, "right");
+    @When("The user slides the {string} to the {string}.")
+    public void the_user_slides_the_to_the(String priceSlider, String direction) {
+
+        subCategorysPage.moveSlider(priceSlider, direction);
     }
 
-    @Then("The user sees that the min value of the price slider has increased.")
-    public void the_user_sees_that_the_min_value_of_the_price_slider_has_increased() {
-        subCategorysPage.verifyMinValueIncreased();
+    @Then("The user sees that the value of the {string} changes in proportion to the slider movement {string}.")
+    public void the_user_sees_that_the_value_of_the_changes_in_proportion_to_the_slider_movement(String priceSlider, String direction) {
+        subCategorysPage.verifyPriceSliderChange(priceSlider,direction);
     }
 
-    @When("The user slides the left end of the price slider to the left.")
-    public void the_user_slides_the_left_end_of_the_price_slider_to_the_left() {
-        subCategorysPage.moveSlider(subCategorysPage.sliderLeft, "right");
-        subCategorysPage.moveSlider(subCategorysPage.sliderLeft, "right");
-        subCategorysPage.moveSlider(subCategorysPage.sliderLeft, "left");
-    }
-
-    @Then("The user sees that the min value of the price slider has decreased.")
-    public void the_user_sees_that_the_min_value_of_the_price_slider_has_decreased() {
-        subCategorysPage.verifyMinValueDecreased();
-    }
-
-    @When("The user slides the right end of the price slider to the left.")
-    public void the_user_slides_the_right_end_of_the_price_slider_to_the_left() {
-        subCategorysPage.moveSlider(subCategorysPage.sliderRight, "left");
-    }
-
-    @Then("The user sees that the max value of the price slider has decreased.")
-    public void the_user_sees_that_the_max_value_of_the_price_slider_has_decreased() {
-        subCategorysPage.verifyMaxValueDecreased();
-    }
-
-    @When("The user slides the right end of the price slider to the right.")
-    public void the_user_slides_the_right_end_of_the_price_slider_to_the_right() {
-        subCategorysPage.moveSlider(subCategorysPage.sliderRight, "left");
-        subCategorysPage.moveSlider(subCategorysPage.sliderRight, "left");
-        subCategorysPage.moveSlider(subCategorysPage.sliderRight, "right");
-    }
-
-    @Then("The user sees that the max value of the price slider has increased.")
-    public void the_user_sees_that_the_max_value_of_the_price_slider_has_increased() {
-        subCategorysPage.verifyMaxValueIncreased();
-    }
-    // Test Case 2
-
-    @When("The user scrolls the price slider to a specific price range {int} and {int}")
-    public void the_user_scrolls_the_price_slider_to_a_specific_price_range_and(Integer int1, Integer int2) {
-subCategorysPage.moveSliderForLoopMetod(20);
-    }
-    @Then("The products displayed should be within the selected price range")
-    public void the_products_displayed_should_be_within_the_selected_price_range() {
-
-    }
 }
