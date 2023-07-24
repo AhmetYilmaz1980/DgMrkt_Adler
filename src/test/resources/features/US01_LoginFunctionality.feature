@@ -1,8 +1,7 @@
-@DGMRKT-1
 Feature: Login DgMrkt on Homepage
 
-    @DGMRKT-28
-    Scenario Outline: Positive Login Test
+  @B7DGMRT-28
+  Scenario Outline: Positive Login Test
     Given The user is on the home page
     When The user clicks to My Account
     Then The user should be able to see and click Login button
@@ -11,11 +10,12 @@ Feature: Login DgMrkt on Homepage
 
 
     Examples:
-      |      email                      |      password       |
-      |    ali1@gmail.com               |    galatasaray.     |
+      | email          | password     |
+      | ali1@gmail.com | galatasaray. |
 
 
-   @wip
+
+
   Scenario Outline: Negative Login Test
     Given The user is on the home page
     When The user clicks to My Account
@@ -25,10 +25,10 @@ Feature: Login DgMrkt on Homepage
 
 
     Examples:
-      |      email                 |      password       |
-      |    umut51088@gmail.com     |       Test123       |
-      |   alicabbar@gmail.com      |      2574dGlogin    |
-      |   alicabbar@gmail.com      |      Test123        |
-      |   umut51088@gmail.com      |                     |
-      |                            |      2574dGlogin    |
-      |                            |                     |
+      | email               | password    |
+      | umut51088@gmail.com | Test123     |
+      | alicabbar@gmail.com | 2574dGlogin |
+      | alicabbar@gmail.com | Test123     |
+      | umut51088@gmail.com |             |
+      |                     | 2574dGlogin |
+      |                     |             |
