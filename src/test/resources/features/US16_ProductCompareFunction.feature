@@ -33,6 +33,29 @@ Feature: Product Compare Function
       | Health & Beauty | 5       |
 
 
+  @wip2
+  Scenario Outline: The Products want to compare on the Product Comparison page
+
+      Given The user is on the home page
+      When The user hover over to Category button
+      Then The user clicks to "<category>" button
+      And The user click Show button and choose 100
+      When The user should be able to hover over to "<product>" Product
+      Then The user should be able to see and click Compare this Product button
+      When The user should be able to hover over to "<product2>" Product
+      Then The user should be able to see and click Compare this Product button
+      And The user should be able to see "2" products next to the product comparison button
+
+      Examples:
+        | category        | product |product2 |
+        | Health & Beauty | 5       | 9      |
+        | Televisions  | 4       | 12      |
+
+
+
+
+
+
   Scenario Outline: Add products Product Compare Page separately
 
     Given The user is on the home page
@@ -50,7 +73,6 @@ Feature: Product Compare Function
       | Networking      | 1    | 1       |
 
 
-
   Scenario Outline: Add the compared products to the cart separately
 
     Given The user is on the home page
@@ -64,12 +86,12 @@ Feature: Product Compare Function
     Then The user should be able to hover over to "<product3>" Product
     And The user should be able to see and click Compare this Product button
     When The user click the Product Compare button
-    Then The user click the "add to cart" button for first Product
-    And The user should be able to see "add to cart" success message
-    Then The user click the "add to cart" button for second Product
-    And The user should be able to see "add to cart" success message
-    Then The user click the "add to cart" button for third Product
-    And The user should be able to see "add to cart" success message
+    Then The user click the add to cart button for first Product
+    And The user should be able to see add to cart success message
+    Then The user click the add to cart button for second Product
+    And The user should be able to see add to cart success message
+    Then The user click the add to cart button for third Product
+    And The user should be able to see add to cart success message
 
 
     Examples:
@@ -80,9 +102,7 @@ Feature: Product Compare Function
 
 
 
-
-  @wip2
-  Scenario Outline: Add the compared products to the cart separately
+  Scenario Outline: Remove the compared products separately
 
     Given The user is on the home page
     When The user hover over to Category button
@@ -95,12 +115,12 @@ Feature: Product Compare Function
     Then The user should be able to hover over to "<product3>" Product
     And The user should be able to see and click Compare this Product button
     When The user click the Product Compare button
-    Then The user click the "remove" button for first Product
-    And The user should be able to see "remove" success message
-    Then The user click the "remove" button for second Product
-    And The user should be able to see "remove" success message
-    Then The user click the "remove" button for third Product
-    And The user should be able to see "remove" success message
+    Then The user click the remove button for first Product
+    And The user should be able to see remove success message
+    Then The user click the remove button for second Product
+    And The user should be able to see remove success message
+    Then The user click the remove button for third Product
+    And The user should be able to see remove success message
 
 
     Examples:
@@ -108,6 +128,7 @@ Feature: Product Compare Function
       | Health & Beauty | 5       | 4        | 1        |
       | Networking      | 1       | 8        | 11       |
       | Televisions     | 4       | 11       | 6        |
+
 
 
 

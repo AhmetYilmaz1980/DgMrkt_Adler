@@ -75,49 +75,57 @@ public class US16_ProductCompareFunction_Step_Defs {
     }
     @When("The user should be able to hover over to {string} Product")
     public void the_user_should_be_able_to_hover_over_to_product(String product) {
+        BrowserUtils.waitFor(2);
             healthBeautyPage.clickCompareButton(Integer.parseInt(product));
-            productComparePage.getProduct(Integer.parseInt(product));
+          //  productComparePage.getTextProduct(Integer.parseInt(product));
     }
 
-
-    @Then("The user click the {string} button for first Product")
-    public void the_user_click_the_button_for_first_product(String string) {
-        BrowserUtils.waitFor(3);
-        if(string == "add to cart") {
-            productComparePage.clickAddToCart();
-        }else if(string =="remove"){
-            productComparePage.clickRemoveBtn();
-        }
+    @Then("The user click the add to cart button for first Product")
+    public void the_user_click_the_add_to_cart_button_for_first_product() {
+        BrowserUtils.waitFor(2);
+        productComparePage.clickAddToCart();
+    }
+    @Then("The user should be able to see add to cart success message")
+    public void the_user_should_be_able_to_see_add_to_cart_success_message() {
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(productComparePage.successMessage.isDisplayed());
+    }
+    @Then("The user click the add to cart button for second Product")
+    public void the_user_click_the_add_to_cart_button_for_second_product() {
+        BrowserUtils.waitFor(2);
+        productComparePage.clickAddToCart();
+    }
+    @Then("The user click the add to cart button for third Product")
+    public void the_user_click_the_add_to_cart_button_for_third_product() {
+        BrowserUtils.waitFor(2);
+        productComparePage.clickAddToCart();
     }
 
-    @Then("The user should be able to see {string} success message")
-    public void the_user_should_be_able_to_see_add_to_cart_success_message(String string) {
-        BrowserUtils.waitFor(3);
-        if(string == "add to cart") {
-            Assert.assertTrue(productComparePage.successMessage.isDisplayed());
-        }else if(string =="remove"){
-            Assert.assertTrue(productComparePage.removeSuccessMessage.isDisplayed());
-        }
-
+    @Then("The user click the remove button for first Product")
+    public void the_user_click_the_remove_button_for_first_product() {
+        BrowserUtils.waitFor(2);
+        productComparePage.clickRemoveBtn();
     }
-    @Then("The user click the {string} button for second Product")
-    public void the_user_click_the_button_for_second_product(String string) {
-        BrowserUtils.waitFor(3);
-        if(string == "add to cart") {
-            productComparePage.clickAddToCart();
-        }else if(string =="remove"){
-            productComparePage.clickRemoveBtn();
-        }
+    @Then("The user should be able to see remove success message")
+    public void the_user_should_be_able_to_see_remove_success_message() {
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(productComparePage.removeSuccessMessage.isDisplayed());
     }
-    @Then("The user click the {string} button for third Product")
-    public void the_user_click_the_button_for_third_product(String string) {
-        BrowserUtils.waitFor(3);
-        if(string == "add to cart") {
-            productComparePage.clickAddToCart();
-        }else if(string =="remove"){
-            productComparePage.clickRemoveBtn();
-        }
+    @Then("The user click the remove button for second Product")
+    public void the_user_click_the_remove_button_for_second_product() {
+        BrowserUtils.waitFor(2);
+        productComparePage.clickRemoveBtn();
+    }
+    @Then("The user click the remove button for third Product")
+    public void the_user_click_the_remove_button_for_third_product() {
+        BrowserUtils.waitFor(2);
+        productComparePage.clickRemoveBtn();
     }
 
+    @Then("The user should be able to see {string} products next to the product comparison button")
+    public void the_user_should_be_able_to_see_products_next_to_the_product_comparison_button(String num) {
+        BrowserUtils.waitFor(2);
+        productComparePage.productCompareNum(Integer.parseInt(num));
+    }
 
 }

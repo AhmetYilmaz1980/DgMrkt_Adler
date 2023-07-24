@@ -26,6 +26,15 @@ public class ProductComparePage extends BasePage{
     @FindBy(xpath = "//a[@class='btn btn-danger btn-block']")
     public List<WebElement> removeButton;
 
+    @FindBy(xpath = "//a[text()='Product Compare (1)']")
+    public WebElement productCompareOne;
+
+    @FindBy(xpath = "//a[text()='Product Compare (2)']")
+    public WebElement productCompareTwo;
+
+    @FindBy(xpath = "//a[text()='Product Compare (3)']")
+    public WebElement productCompareThree;
+
     int sayac=0;
     int sayac2=0;
 
@@ -52,12 +61,12 @@ public class ProductComparePage extends BasePage{
             BrowserUtils.clickWithJS(removeButton.get(1));
             sayac2++;
         }else if(sayac2==2){
-            BrowserUtils.clickWithJS(removeButton.get(2));
+            BrowserUtils.clickWithJS(removeButton.get(0));
         }
     }
 
 
-    public String getProduct(int product){
+    public String getTextProduct(int product){
         return healthBeautyPage.products.get(product).getText();
     }
 
@@ -66,7 +75,17 @@ public class ProductComparePage extends BasePage{
     }
 
     public void equalsProduct(int product){
-        Assert.assertEquals(getProduct(product),getCompareProduct());
+        Assert.assertEquals(getTextProduct(product),getCompareProduct());
+    }
+
+    public void productCompareNum(int num){
+        if(num==1){
+            Assert.assertTrue(productCompareOne.isDisplayed());
+        } else if (num==2) {
+            Assert.assertTrue(productCompareTwo.isDisplayed());
+        } else if (num==3) {
+            Assert.assertTrue(productCompareThree.isDisplayed());
+        }
     }
 
 
