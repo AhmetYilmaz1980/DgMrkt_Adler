@@ -1,4 +1,4 @@
-@wip
+@US08
 Feature: Edit-Update Account Information
 
   Background:
@@ -10,9 +10,10 @@ Feature: Edit-Update Account Information
     Then Verify that the user is on the AccountPage
     And The user clicks "Edit Account" from AccountPage
 
-  Scenario Outline:Edit Info Positive TESTS - User should be able to update the account
+  @B7DGMRT-27
+  Scenario Outline:Edit Info Positive TESTS - As a user I should be able to update the account with valid inputs
     Given The User on the Edit Information Page
-    Then The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
+    When The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
     And Verify that the user successfully update information
     Examples:
       | firstName                        | lastName                         | email             | telephone                        |
@@ -23,7 +24,8 @@ Feature: Edit-Update Account Information
       | ali                              | ali                              | ali1@gmail.com.de | 0123456789                       |
       | ali                              | ali                              | ali1@gmail.com    | 0123456789                       |
 
-  Scenario Outline: Edit Info Negative TESTS_1 - User should be able to get Warning Message
+  @B7DGMRT-29
+  Scenario Outline: Edit Info Negative TESTS_1 - As a user I should be able to get Warning Message
     Given The User on the Edit Information Page
     When The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
     Then Verify that the user gets a "<warningMessage>"
@@ -37,7 +39,7 @@ Feature: Edit-Update Account Information
       | ali                               | AbcAbcAbcAbcAbcAbcAbcAbcAbcAbcAbc | ali1@gmail.com | 0123456789 | Last Name must be between 1 and 32 characters!  |
       | ali                               | ali                               | ali1@gmail.com | 01         | Telephone must be between 3 and 32 characters!  |
 
-
+  @B7DGMRT-29
   Scenario Outline: Negative TESTS_2 - User should be able to get warning Message or POP-UP Warning message
     Given The User on the Edit Information Page
     When The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
