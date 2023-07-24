@@ -39,7 +39,7 @@ Feature: Edit-Update Account Information
       | ali                               | AbcAbcAbcAbcAbcAbcAbcAbcAbcAbcAbc | ali1@gmail.com | 0123456789 | Last Name must be between 1 and 32 characters!  |
       | ali                               | ali                               | ali1@gmail.com | 01         | Telephone must be between 3 and 32 characters!  |
 
-  @B7DGMRT-29
+  @B7DGMRT-30
   Scenario Outline: Negative TESTS_2 - User should be able to get warning Message or POP-UP Warning message
     Given The User on the Edit Information Page
     When The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
