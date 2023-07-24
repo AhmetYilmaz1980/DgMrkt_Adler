@@ -11,7 +11,7 @@ Feature: Login DgMrkt on Homepage
 
     Examples:
       | email                    | password |
-      | feymangulgun91@gmail.com | glgn_91  |
+      | ali1@gmail.com | galatasaray.  |
 
 
 
