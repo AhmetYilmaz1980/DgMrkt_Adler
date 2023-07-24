@@ -1,5 +1,6 @@
 package com.euroTech.pages;
 
-public class CategoryPage extends BasePage {
+import com.euroTech.pages.BasePage;
 
+public class CategoryPage extends BasePage {
 }

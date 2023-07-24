@@ -1,14 +1,15 @@
 package com.euroTech.pages;
 
+import com.euroTech.pages.BasePage;
 import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.List;
-
 import static com.euroTech.utilities.Driver.driver;
 
 public class Health_BeautyPage extends BasePage {
@@ -33,17 +34,4 @@ public class Health_BeautyPage extends BasePage {
 
     @FindBy(xpath = "//option[text()='Rating (Highest)']")
     public WebElement ratingHighest;
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

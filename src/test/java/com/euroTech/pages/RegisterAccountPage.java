@@ -1,12 +1,10 @@
 package com.euroTech.pages;
 
 
-
 import com.euroTech.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 
 public class RegisterAccountPage extends BasePage {
     @FindBy(id = "input-firstname")
@@ -66,7 +64,6 @@ public class RegisterAccountPage extends BasePage {
             actualMessage = Driver.get().findElement(By.xpath("//span[text()=' Warning: You must agree to the Privacy Policy!']")).getText();
         }
         return actualMessage;
-
     }
 
 }
