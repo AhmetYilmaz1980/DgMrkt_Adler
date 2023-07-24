@@ -84,7 +84,6 @@ public class RegisterAccountPage extends BasePage {
         passwordInput.sendKeys(password);
         confirmPasswordInput.sendKeys(passwordConfirm);
     }
-
     public void subscribeAndPrivacyPolicy(String yesNo) {
         Driver.get().findElement(By.xpath("//label[text()='" + yesNo + "']")).click();
         privacyPolicyBtn.click();
