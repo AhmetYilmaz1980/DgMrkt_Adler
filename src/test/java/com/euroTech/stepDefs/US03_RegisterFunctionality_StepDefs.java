@@ -69,7 +69,4 @@ public class US03_RegisterFunctionality_StepDefs {
         BrowserUtils.waitFor(4);
         registerAccountPage.privacyPolicyAssertion(expectedMessage);
     }
-
-
-
 }

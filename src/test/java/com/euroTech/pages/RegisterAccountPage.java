@@ -1,7 +1,5 @@
 package com.euroTech.pages;
 
-
-
 import com.euroTech.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.Random;
 import static org.junit.Assert.assertEquals;
-
 
 public class RegisterAccountPage extends BasePage {
     @FindBy(id = "input-firstname")
@@ -114,7 +111,6 @@ public class RegisterAccountPage extends BasePage {
         }
         assertEquals(expectedMessage, actualMessage);
     }
-
     public void fullAssertionMessage(String expectedMessage, String confirmExpectedMessage){
         if (expectedMessage.contains("32 characters!")|| expectedMessage.contains("E-Mail")){
             assertion(expectedMessage);

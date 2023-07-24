@@ -54,4 +54,3 @@ Feature: User Register Functionality
     Examples:
       | firstName | lastName | email                | telephone   | password  | passwordConfirm | yesNo | warningMessage                                 |
       | altan     | erkek    | altanerkek@gmail.com | 01234567891 | Test1234! | Test1234!       | No    | Warning: You must agree to the Privacy Policy! |
-
