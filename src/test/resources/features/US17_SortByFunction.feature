@@ -47,8 +47,3 @@ Feature: Cat-Subcategory Sort By Function
       | Networking      | Model (A - Z)      | Model (A - Z)      |
       | Networking      | Model (Z - A)      | Model (Z - A)      |
 
-
-
-
-
-
