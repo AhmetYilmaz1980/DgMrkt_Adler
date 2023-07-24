@@ -10,8 +10,8 @@ Feature: Edit-Update Account Information
     Then Verify that the user is on the AccountPage
     And The user clicks "Edit Account" from AccountPage
 
-  Scenario Outline:Edit Info Positive TESTS - Edit Information with valid credentials
-    When The User on the Edit Information Page
+  Scenario Outline:Edit Info Positive TESTS - User should be able to update the account
+    Given The User on the Edit Information Page
     Then The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
     And Verify that the user successfully update information
     Examples:
@@ -23,7 +23,7 @@ Feature: Edit-Update Account Information
       | ali                              | ali                              | ali1@gmail.com.de | 0123456789                       |
       | ali                              | ali                              | ali1@gmail.com    | 0123456789                       |
 
-  Scenario Outline: Edit Info Negative TESTS_1 - Get Warning Messages
+  Scenario Outline: Edit Info Negative TESTS_1 - User should be able to get Warning Message
     Given The User on the Edit Information Page
     When The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
     Then Verify that the user gets a "<warningMessage>"
@@ -38,7 +38,7 @@ Feature: Edit-Update Account Information
       | ali                               | ali                               | ali1@gmail.com | 01         | Telephone must be between 3 and 32 characters!  |
 
 
-  Scenario Outline: Negative TESTS_2 - Get POP-UP Warning Messages
+  Scenario Outline: Negative TESTS_2 - User should be able to get warning Message or POP-UP Warning message
     Given The User on the Edit Information Page
     When The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
     Then The message contains "<message>"
