@@ -1,4 +1,4 @@
-
+@US04
 Feature: Currency Function
 
   Background:
@@ -42,8 +42,7 @@ Feature: Currency Function
       | umut51088@gmail.com | 2574dGlogin | Euro     | €      |
 
 
-@wip
-  Scenario Outline: The user should be able to complete the purchase when the currency is changed at last step
+  Scenario Outline: The user should be able to complete the purchase when the currency is changed at last step of purchase
     When The user enters correct "<email>" ,"<password>" and clicks black login button
     Then The user should be able to login and see positive login message
     Then The user scrolls down the page and should be able to see products
