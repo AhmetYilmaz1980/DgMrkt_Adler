@@ -1,9 +1,13 @@
+@DGMRKT-1
 Feature: Login DgMrkt on Homepage
-  @login
-  Scenario Outline: Positive Login Test
+
+    @B7DGMRKT-31
+    Background:
     Given The user is on the home page
     When The user clicks to My Account
     Then The user should be able to see and click Login button
+    @B7DGMRKT-28
+    Scenario Outline: Positive Login Test
     When The user enters correct "<email>" ,"<password>" and clicks black login button
     Then The user should be able to login and see positive login message
 
@@ -13,11 +17,8 @@ Feature: Login DgMrkt on Homepage
       |    ali1@gmail.com               |    galatasaray.     |
 
 
-   @wip
-  Scenario Outline: Negative Login Test
-    Given The user is on the home page
-    When The user clicks to My Account
-    Then The user should be able to see and click Login button
+
+    Scenario Outline: Negative Login Test
     When The user enters wrong "<email>" ,"<password>" and clicks black login button
     Then The user shouldn't be able to login and see negative login message
 
