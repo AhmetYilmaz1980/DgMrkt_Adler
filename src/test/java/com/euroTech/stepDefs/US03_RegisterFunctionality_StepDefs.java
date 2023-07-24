@@ -7,8 +7,7 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 
 import java.io.IOException;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class US03_RegisterFunctionality_StepDefs {
     RegisterAccountPage registerAccountPage = new RegisterAccountPage();

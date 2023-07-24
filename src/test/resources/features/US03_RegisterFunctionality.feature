@@ -1,4 +1,3 @@
-
 Feature: User Register Functionality
 
   Background: Click on My User Account and Register button

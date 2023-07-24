@@ -31,14 +31,6 @@ public class RegisterAccountPage extends BasePage {
     public WebElement continueBtn;
     @FindBy(xpath = "//h2[text()='My Account']")
     public WebElement myAccount;
-    @FindBy(xpath = "//div[text()='First Name must be between 1 and 32 characters!']")
-    public WebElement firstNameWarningMessage;
-    @FindBy(xpath = "//div[text()='Last Name must be between 1 and 32 characters!']")
-    public WebElement lastNameWarningMessage;
-    @FindBy(xpath = "//div[text()='E-Mail Address does not appear to be valid!']")
-    public WebElement emailWarningMessage;
-    @FindBy(xpath = "//div[text()='Telephone must be between 3 and 32 characters!']")
-    public WebElement telephoneWarningMessage;
     @FindBy(xpath = "//div[text()='Password must be between 4 and 20 characters!']")
     public WebElement passwordWarningMessage;
     @FindBy(xpath = "//div[text()='Password confirmation does not match password!']")
