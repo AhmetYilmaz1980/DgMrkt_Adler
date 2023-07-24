@@ -17,22 +17,20 @@ Feature: Product Compare Function
       | Televisions     |
 
 
-    Scenario Outline: The Products they want to compare on the Product Comparison page
+  Scenario Outline: The Products they want to compare on the Product Comparison page
 
-      Given The user is on the home page
-      When The user hover over to Category button
-      Then The user clicks to "<category>" button
-      When The user click Show button and choose 100
-      Then The user should be able to hover over to "<product>" Product
-      And The user should be able to see and click Compare this Product button
-      When The user click the Product Compare button
-      Then The user should be able to see the "<product>" they want to compare on the Product Comparison page
+    Given The user is on the home page
+    When The user hover over to Category button
+    Then The user clicks to "<category>" button
+    When The user click Show button and choose 100
+    Then The user should be able to hover over to "<product>" Product
+    And The user should be able to see and click Compare this Product button
+    When The user click the Product Compare button
+    Then The user should be able to see the "<product>" they want to compare on the Product Comparison page
 
     Examples:
       | category        | product |
-      | Health & Beauty | 5      |
-
-
+      | Health & Beauty | 5       |
 
 
   Scenario Outline: Add products Product Compare Page separately
@@ -52,30 +50,8 @@ Feature: Product Compare Function
       | Networking      | 1    | 1       |
 
 
-    Scenario Outline: Add the compared products to the cart separately
 
-      Given The user is on the home page
-      When The user hover over to Category button
-      Then The user clicks to "<category>" button
-      When The user click Show button and choose 100
-      Then The user should be able to hover over to "<product>" Product
-      And The user should be able to see and click Compare this Product button
-      Then The user should be able to hover over to "<product2>" Product
-      And The user should be able to see and click Compare this Product button
-      Then The user should be able to hover over to "<product3>" Product
-      And The user should be able to see and click Compare this Product button
-      When The user click the Product Compare button
-      Then The user click the "add to cart" button for first Product
-
-
-      Examples:
-        | category        | product |product2 | product3|
-        | Health & Beauty | 5       |      4    |   1      |
-
-
-
-  @wip2
-  Scenario Outline: The Products they want to compare on the Product Comparison page
+  Scenario Outline: Add the compared products to the cart separately
 
     Given The user is on the home page
     When The user hover over to Category button
@@ -83,10 +59,61 @@ Feature: Product Compare Function
     When The user click Show button and choose 100
     Then The user should be able to hover over to "<product>" Product
     And The user should be able to see and click Compare this Product button
+    Then The user should be able to hover over to "<product2>" Product
+    And The user should be able to see and click Compare this Product button
+    Then The user should be able to hover over to "<product3>" Product
+    And The user should be able to see and click Compare this Product button
+    When The user click the Product Compare button
+    Then The user click the "add to cart" button for first Product
+    And The user should be able to see "add to cart" success message
+    Then The user click the "add to cart" button for second Product
+    And The user should be able to see "add to cart" success message
+    Then The user click the "add to cart" button for third Product
+    And The user should be able to see "add to cart" success message
+
 
     Examples:
-      | category        | product |
-      | Health & Beauty | 21     |
+      | category        | product | product2 | product3 |
+      | Health & Beauty | 5       | 4        | 1        |
+      | Networking      | 1       | 8        | 11       |
+      | Televisions     | 4       | 11       | 6        |
+
+
+
+
+  @wip2
+  Scenario Outline: Add the compared products to the cart separately
+
+    Given The user is on the home page
+    When The user hover over to Category button
+    Then The user clicks to "<category>" button
+    When The user click Show button and choose 100
+    Then The user should be able to hover over to "<product>" Product
+    And The user should be able to see and click Compare this Product button
+    Then The user should be able to hover over to "<product2>" Product
+    And The user should be able to see and click Compare this Product button
+    Then The user should be able to hover over to "<product3>" Product
+    And The user should be able to see and click Compare this Product button
+    When The user click the Product Compare button
+    Then The user click the "remove" button for first Product
+    And The user should be able to see "remove" success message
+    Then The user click the "remove" button for second Product
+    And The user should be able to see "remove" success message
+    Then The user click the "remove" button for third Product
+    And The user should be able to see "remove" success message
+
+
+    Examples:
+      | category        | product | product2 | product3 |
+      | Health & Beauty | 5       | 4        | 1        |
+      | Networking      | 1       | 8        | 11       |
+      | Televisions     | 4       | 11       | 6        |
+
+
+
+
+
+
 
 
 

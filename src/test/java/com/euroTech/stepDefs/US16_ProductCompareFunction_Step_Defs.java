@@ -39,6 +39,7 @@ public class US16_ProductCompareFunction_Step_Defs {
 
     @Then("The user should be able to see and click Compare this Product button")
     public void the_user_should_be_able_to_see_and_click_button() {
+
     }
 
     @And("The user should be able to see success message")
@@ -61,8 +62,8 @@ public class US16_ProductCompareFunction_Step_Defs {
     @Then("The user should be able to see the {string} they want to compare on the Product Comparison page")
     public void the_user_should_be_able_to_see_the_they_want_to_compare_on_the_product_comparison_page(String product) {
         BrowserUtils.waitFor(3);
-        productComparePage.getProduct(Integer.parseInt(product));
         productComparePage.getCompareProduct();
+        BrowserUtils.waitFor(2);
         productComparePage.equalsProduct(Integer.parseInt(product));
 
     }
@@ -75,15 +76,48 @@ public class US16_ProductCompareFunction_Step_Defs {
     @When("The user should be able to hover over to {string} Product")
     public void the_user_should_be_able_to_hover_over_to_product(String product) {
             healthBeautyPage.clickCompareButton(Integer.parseInt(product));
+            productComparePage.getProduct(Integer.parseInt(product));
     }
 
 
     @Then("The user click the {string} button for first Product")
     public void the_user_click_the_button_for_first_product(String string) {
+        BrowserUtils.waitFor(3);
+        if(string == "add to cart") {
+            productComparePage.clickAddToCart();
+        }else if(string =="remove"){
+            productComparePage.clickRemoveBtn();
+        }
     }
 
+    @Then("The user should be able to see {string} success message")
+    public void the_user_should_be_able_to_see_add_to_cart_success_message(String string) {
+        BrowserUtils.waitFor(3);
+        if(string == "add to cart") {
+            Assert.assertTrue(productComparePage.successMessage.isDisplayed());
+        }else if(string =="remove"){
+            Assert.assertTrue(productComparePage.removeSuccessMessage.isDisplayed());
+        }
 
-
+    }
+    @Then("The user click the {string} button for second Product")
+    public void the_user_click_the_button_for_second_product(String string) {
+        BrowserUtils.waitFor(3);
+        if(string == "add to cart") {
+            productComparePage.clickAddToCart();
+        }else if(string =="remove"){
+            productComparePage.clickRemoveBtn();
+        }
+    }
+    @Then("The user click the {string} button for third Product")
+    public void the_user_click_the_button_for_third_product(String string) {
+        BrowserUtils.waitFor(3);
+        if(string == "add to cart") {
+            productComparePage.clickAddToCart();
+        }else if(string =="remove"){
+            productComparePage.clickRemoveBtn();
+        }
+    }
 
 
 }

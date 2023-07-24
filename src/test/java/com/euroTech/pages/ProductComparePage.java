@@ -17,8 +17,44 @@ public class ProductComparePage extends BasePage{
     @FindBy(xpath = "//a[contains(text(),'shopping cart')]")
     public WebElement successMessage;
 
+    @FindBy(xpath = "//div[contains(text(),' Success')]")
+    public WebElement removeSuccessMessage;
+
     @FindBy(xpath = "//input[@value='Add to Cart']")
     public List<WebElement> addCartButton;
+
+    @FindBy(xpath = "//a[@class='btn btn-danger btn-block']")
+    public List<WebElement> removeButton;
+
+    int sayac=0;
+    int sayac2=0;
+
+
+    public void clickAddToCart(){
+
+        if(sayac==0){
+            BrowserUtils.clickWithJS(addCartButton.get(0));
+            sayac ++;
+        } else if (sayac==1) {
+            BrowserUtils.clickWithJS(addCartButton.get(1));
+            sayac++;
+        }else if(sayac==2){
+            BrowserUtils.clickWithJS(addCartButton.get(2));
+        }
+
+    }
+
+    public void clickRemoveBtn(){
+        if(sayac2==0){
+            BrowserUtils.clickWithJS(removeButton.get(0));
+            sayac2 ++;
+        } else if (sayac2==1) {
+            BrowserUtils.clickWithJS(removeButton.get(1));
+            sayac2++;
+        }else if(sayac2==2){
+            BrowserUtils.clickWithJS(removeButton.get(2));
+        }
+    }
 
 
     public String getProduct(int product){
