@@ -9,11 +9,9 @@ Feature: Edit-Update Account Information
     And The user clicks "My Account" from MyAccountButton
     Then Verify that the user is on the AccountPage
     And The user clicks "Edit Account" from AccountPage
-    Then Verify that the user is on the Edit Information Page
-
 
   Scenario Outline:Edit Info Positive TESTS - Edit Information with valid credentials
-    Then The User on the Edit Information Page
+    When The User on the Edit Information Page
     Then The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
     And Verify that the user successfully update information
     Examples:
@@ -25,8 +23,7 @@ Feature: Edit-Update Account Information
       | ali                              | ali                              | ali1@gmail.com.de | 0123456789                       |
       | ali                              | ali                              | ali1@gmail.com    | 0123456789                       |
 
-
-  Scenario Outline: Negative TESTS_1
+  Scenario Outline: Edit Info Negative TESTS_1 - Get Warning Messages
     Given The User on the Edit Information Page
     When The User enters "<firstName>" "<lastName>" "<email>" "<telephone>"
     Then Verify that the user gets a "<warningMessage>"

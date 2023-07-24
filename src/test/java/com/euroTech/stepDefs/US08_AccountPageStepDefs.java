@@ -25,8 +25,8 @@ public class US08_AccountPageStepDefs {
        accountPage.verifyAccountPage();
     }
     @And("The user clicks {string} from AccountPage")
-    public void the_user_clicks_from_accountPage(String editAccountButton) {
-        accountPage.selectButtonFromAccountPage(editAccountButton);
+    public void the_user_clicks_from_accountPage(String selectedButton) {
+        accountPage.selectButtonFromAccountPage(selectedButton);
     }
     @Then("Verify that the user is on the Edit Information Page")
     public void verify_that_the_user_is_on_the_edit_information_page() {

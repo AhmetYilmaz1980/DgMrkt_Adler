@@ -1,7 +1,7 @@
 package com.euroTech.pages;
 
 import com.euroTech.utilities.BrowserUtils;
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -70,14 +70,12 @@ public class EditInfoPage extends BasePage {
         BrowserUtils.waitFor(3);
     }
     public void verifyEditInformationPage() {
-        Assert.assertTrue(editInfoText.isDisplayed());
-        //BrowserUtils.verifyElementDisplayed(editInfoText);
+        assertTrue("Element could NOT displayed",editInfoText.isDisplayed());
     }
-    public void verifGetWarningMessage(String expectedMessage) {
+    public void verifyGetWarningMessage(String expectedMessage) {
         BrowserUtils.waitForVisibility(blankInputWarningMessage, 3);
         String actualWarningMessage = blankInputWarningMessage.getText();
-        Assert.assertEquals(expectedMessage, actualWarningMessage);
-
+        assertEquals(expectedMessage, actualWarningMessage);
     }
     public void resetEmail() {
         accountPage.selectButtonFromAccountPage("Edit Account");

@@ -26,7 +26,7 @@ public class US08_Edit_Info_StepDefs {
     }
     @Then("Verify that the user gets a {string}")
     public void verify_that_the_user_gets_a(String warningMessage) {
-        editInfoPage.verifGetWarningMessage(warningMessage);
+        editInfoPage.verifyGetWarningMessage(warningMessage);
         editInfoPage.resetEmail();
     }
     @Then("The message contains {string}")
