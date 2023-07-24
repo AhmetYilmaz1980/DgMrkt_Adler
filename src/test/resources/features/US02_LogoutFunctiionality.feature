@@ -15,6 +15,7 @@ Feature: Logout Funcionality
       | email          | password     |
       | ali1@gmail.com | galatasaray. |
 
+
   @logout
   Scenario Outline: Logout Test on My account page
     * The user is on the home page
@@ -22,7 +23,7 @@ Feature: Logout Funcionality
     * The user should be able to see and click Login button
     * The user enters correct "<email>" ,"<password>" and clicks black login button
     * The user should be able to login and see positive login message
-    * The user cliks to My Account dropdown menu and My Account button
+    * The user clicks to My Account dropdown menu and My Account button
     * Verify that account logout is visible
     * Close driver
 

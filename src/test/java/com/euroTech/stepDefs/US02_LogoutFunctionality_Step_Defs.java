@@ -43,8 +43,8 @@ public class US02_LogoutFunctionality_Step_Defs {
         Assert.assertEquals(expectedValue, actualValue);
     }
 
-    @Given("The user cliks to My Account dropdown menu and My Account button")
-    public void the_user_cliks_to_my_account_dropdown_menu_and_my_account_button() throws InterruptedException {
+    @Given("The user clicks to My Account dropdown menu and My Account button")
+    public void the_user_clicks_to_my_account_dropdown_menu_and_my_account_button() throws InterruptedException {
         logoutPage.myAccountDDM.click();
         logoutPage.myAccountDDM2.click();
         Thread.sleep(3000);
@@ -66,7 +66,7 @@ public class US02_LogoutFunctionality_Step_Defs {
 
     @Given("Close driver")
     public void close_driver() {
-       Driver.driver.close();
+      // Driver.driver.close();
     }
 
 }

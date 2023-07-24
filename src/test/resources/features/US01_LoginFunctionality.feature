@@ -15,7 +15,7 @@ Feature: Login DgMrkt on Homepage
 
 
 
-
+@negative
   Scenario Outline: Negative Login Test
     Given The user is on the home page
     When The user clicks to My Account
