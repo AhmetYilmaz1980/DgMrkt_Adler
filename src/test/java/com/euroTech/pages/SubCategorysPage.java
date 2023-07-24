@@ -14,12 +14,12 @@ public class SubCategorysPage extends BasePage {
     Actions actions = new Actions(Driver.get());
     @FindBy(id = "input-sort")
     public WebElement sortByBox;
-    @FindBy(className = "filter-price") //Price Slider i görmek icin
+    @FindBy(className = "filter-price")
     public WebElement priceSlider;
     @FindBy(xpath = "//span[starts-with(@class,\'ui-slider-handle\')]/../span[1]")
-    public WebElement sliderLeft; // Sliderin hareketli sol ucu
+    public WebElement sliderLeft;
     @FindBy(xpath = "//span[starts-with(@class,\'ui-slider-handle\')]/../span[2]")
-    public WebElement sliderRight;// Sliderin hareketli sag ucu
+    public WebElement sliderRight;
     @FindBy(id = "price-from")
     public WebElement minValue;
     @FindBy(id = "price-to")
@@ -35,19 +35,15 @@ public class SubCategorysPage extends BasePage {
         select.selectByVisibleText(sortBy);
         sort.click();
     }
-
     public void sortByVerify(String sortByVerify) {
         WebElement actuel = Driver.get().findElement(By.xpath("//option[text()='" + sortByVerify + "']"));
         Assert.assertEquals(sortByVerify, actuel.getText());
-
     }
-
     public void moveSlider(String priceSlider, String direction) {
         WebElement slider;
         if (priceSlider.equals("sliderLeft") ) {
             slider = sliderLeft;
         } else {slider = sliderRight;}
-
         BrowserUtils.waitFor(3);
         switch (direction) {
             case "right":
@@ -55,6 +51,7 @@ public class SubCategorysPage extends BasePage {
                 break;
             case "left":
                 actions.dragAndDropBy(slider, 100, 0).build().perform();
+                BrowserUtils.waitFor(3);
                 actions.dragAndDropBy(slider, -100, 0).build().perform();
                 break;
         }
@@ -71,7 +68,6 @@ public class SubCategorysPage extends BasePage {
             verifyMaxValueIncreased();
         }
     }
-
     public void verifyMinValueIncreased() {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(10);
@@ -82,9 +78,7 @@ public class SubCategorysPage extends BasePage {
         Integer secondValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue < secondValue);
-
     }
-
     public void verifyMinValueDecreased() {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(10);
@@ -100,16 +94,14 @@ public class SubCategorysPage extends BasePage {
         Integer secondValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue > secondValue);
-
     }
-
     public void verifyMaxValueDecreased() {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(5);
         Integer ersteValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
         System.out.println("CersteValue = " + ersteValue);
         actions.dragAndDropBy(sliderRight, -100, 0).build().perform();
-        BrowserUtils.waitForPageToLoad(10);
+        BrowserUtils.waitForPageToLoad(13);
         Integer secondValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue > secondValue);
@@ -128,9 +120,4 @@ public class SubCategorysPage extends BasePage {
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue < secondValue);
     }
-
-
-
-
-
 }
