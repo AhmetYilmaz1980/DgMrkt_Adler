@@ -13,7 +13,7 @@ Feature: Wish List Test
     And The user sees and clicks cart button
     Then The user verify that the product has been added
 
-
+@wish3
   Scenario: The user should be able to delete products from wish list
     Given The user logs in to My Account
     When The user clicks on wish list button
