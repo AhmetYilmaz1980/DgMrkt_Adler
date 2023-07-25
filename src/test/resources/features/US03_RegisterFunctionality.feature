@@ -17,7 +17,7 @@ Feature: User Register Functionality
       | Nurzeynep2 | zeynep1  | J01@gmail.co    | 01234567891 | Test1234! | Test1234!       | Yes   |
       | nerede2    | nerede1  | J02@hotmail.com | 01234567891 | Test1234! | Test1234!       | Yes   |
 
-
+@wip
   Scenario Outline: The user enters invalid value
     When The user enters "<firstName>" and "<lastName>" and "<email>" and "<telephone>" and "<password>" and "<passwordConfirm>"
     And The user clicks subscribe "<yesNo>" and privacy policy
