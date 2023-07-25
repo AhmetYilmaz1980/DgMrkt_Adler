@@ -14,6 +14,19 @@ public class SearchPage extends BasePage{
     @FindBy(xpath = "//button[@id='btn-search-category']")
     public WebElement searchTextBoxButton;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/h1[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/h4[1]/a[1]")
     public WebElement resultSearch;
+
+    @FindBy(xpath = "//input[@id='input-search']")
+    public WebElement BelowSearchBox;
+
+    @FindBy(xpath = "//select[@name='category_id']")
+    public WebElement subCatDDM;
+
+    @FindBy(xpath = "//input[@id='button-search']")
+    public WebElement blackSearchButton;
+
+    @FindBy(xpath = "//a[@class='a-top-link']//span[contains(text(),'Home')]")
+    public WebElement homePageBut;
+
 }
