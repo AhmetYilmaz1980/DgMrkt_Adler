@@ -14,7 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class US17_SortByFunction_Step_Defs {
-    HomePage homePage =new HomePage();
+    HomePage homePage = new HomePage();
     CategoryPage categoryPage = new CategoryPage();
 
     Health_BeautyPage healthBeautyPage = new Health_BeautyPage();
@@ -33,14 +33,12 @@ public class US17_SortByFunction_Step_Defs {
 
     @Then("The user should be able to see sort by in  on the subCategory page {string}")
     public void the_user_should_be_able_to_see_sort_by_in_on_the_sub_category_page(String sortBy) {
-
         subCategorysPage.sortDropdown(sortBy);
     }
     @Then("The user must have selected {string}")
     public void the_user_must_have_selected(String sortByVerify) {
 
         subCategorysPage.sortByVerify(sortByVerify);
-
     }
     @Then("The user should be able to select sort by in  on the subCategory  {string}")
     public void the_user_should_be_able_to_select_sort_by_in_on_the_sub_category(String optionText) {

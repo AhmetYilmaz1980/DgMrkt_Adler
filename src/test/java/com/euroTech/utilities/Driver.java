@@ -13,7 +13,8 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
 
-    private Driver() {}
+    private Driver() {
+    }
 
     public static WebDriver driver;
 
