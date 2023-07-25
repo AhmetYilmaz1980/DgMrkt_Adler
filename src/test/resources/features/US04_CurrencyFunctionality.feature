@@ -1,4 +1,4 @@
-@US04
+@B7DGMRT-4
 Feature: Currency Function
 
   Background:
@@ -6,6 +6,7 @@ Feature: Currency Function
     When The user clicks to My Account
     Then The user should be able to see and click Login button
 
+    @B7DGMRT-40
   Scenario Outline: The user should be able to see products price with currency of choice
     When The user enters correct "<email>" ,"<password>" and clicks black login button
     Then The user should be able to login and see positive login message
@@ -20,6 +21,7 @@ Feature: Currency Function
       | umut51088@gmail.com | 2574dGlogin | Pound Sterling | $      |
       | umut51088@gmail.com | 2574dGlogin | US Dollar      | £      |
 
+  @B7DGMRT-41
   Scenario Outline: The user should be able to complete the purchase with currency of choice
     When The user enters correct "<email>" ,"<password>" and clicks black login button
     Then The user should be able to login and see positive login message
@@ -41,7 +43,7 @@ Feature: Currency Function
       | email               | password    | currency | symbol |
       | umut51088@gmail.com | 2574dGlogin | Euro     | €      |
 
-
+  @B7DGMRT-42
   Scenario Outline: The user should be able to complete the purchase when the currency is changed at last step of purchase
     When The user enters correct "<email>" ,"<password>" and clicks black login button
     Then The user should be able to login and see positive login message
