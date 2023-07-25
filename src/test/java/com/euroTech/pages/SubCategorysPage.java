@@ -4,13 +4,10 @@ import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import java.util.concurrent.TimeUnit;
 
 public class SubCategorysPage extends BasePage {
     Actions actions = new Actions(Driver.get());
@@ -31,6 +28,8 @@ public class SubCategorysPage extends BasePage {
     @FindBy(id = "price-to")
     public WebElement inputMaxValue;
 
+    //ahmet's sort by function
+
     public void sortDropdown(String sortBy) {
         WebElement sort = Driver.get().findElement(By.xpath("//option[text()='" + sortBy + "']"));
         Select select = new Select(sortByBox);
@@ -39,22 +38,23 @@ public class SubCategorysPage extends BasePage {
     }
 
     public void sortByVerify(String sortByVerify) {
-        WebElement actuel = Driver.get().findElement(By.xpath("//option[text()='"+sortByVerify+"']"));
-        Assert.assertEquals(sortByVerify,actuel.getText());
+        WebElement actuel = Driver.get().findElement(By.xpath("//option[text()='" + sortByVerify + "']"));
+        Assert.assertEquals(sortByVerify, actuel.getText());
     }
-
-
     public void selectOptions(String optionsText) {
         BrowserUtils.waitFor(7);
         WebElement dropdownElement = Driver.get().findElement(By.id("input-sort"));
         Select dropdown = new Select(dropdownElement);
         dropdown.selectByVisibleText(optionsText);
-       // BrowserUtils.waitFor(2);
+        // BrowserUtils.waitFor(2);
         String actualOption = dropdown.getFirstSelectedOption().getText();
-       System.out.println("actualOption = " + actualOption);
+        System.out.println("actualOption = " + actualOption);
         System.out.println("optionsText = " + optionsText);
         Assert.assertEquals(optionsText, actualOption);
     }
+
+    // nilgün's price slider
+
     public void moveSlider(String priceSlider, String direction) {
         WebElement slider;
         if (priceSlider.equals("sliderLeft") ) {
@@ -122,7 +122,6 @@ public class SubCategorysPage extends BasePage {
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue > secondValue);
     }
-
     public void verifyMaxValueIncreased() {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(10);
@@ -137,14 +136,16 @@ public class SubCategorysPage extends BasePage {
         Assert.assertTrue(ersteValue < secondValue);
     }
 
-    // elif's view icon
-
+    // elif's product view icon
 
     public void clickProductViewIcon(String viewOption) {
-
         WebElement viewIcon = Driver.get().findElement(By.xpath("//button[@onclick=\"category_view.changeView('"+viewOption+"')\"]"));
         viewIcon.click();
         BrowserUtils.waitFor(2);
     }
 
+    public void verifyActiveViewOption(String activeViewOption){
+        WebElement activeViewIcon = Driver.get().findElement(By.xpath("//button[@class='btn btn-default btn-custom-view " + activeViewOption + " active']")) ;
+        Assert.assertTrue( activeViewIcon.isDisplayed());
+    }
 }

@@ -1,12 +1,8 @@
 package com.euroTech.stepDefs;
 
 import com.euroTech.pages.*;
-import com.euroTech.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class US15_ProductViewIcon_Step_Defs {
 
@@ -18,7 +14,6 @@ public class US15_ProductViewIcon_Step_Defs {
     }
     @Then("The user verifies that {string} products are displayed as viewOption")
     public void theUserVerifiesThatProductsAreDisplayedAs(String activeViewOption) {
-        WebElement activeViewIcon = Driver.get().findElement(By.xpath("//button[@class='btn btn-default btn-custom-view " + activeViewOption + " active']")) ;
-        Assert.assertTrue( activeViewIcon.isDisplayed());
+        subCategorysPage.verifyActiveViewOption(activeViewOption);
     }
 }

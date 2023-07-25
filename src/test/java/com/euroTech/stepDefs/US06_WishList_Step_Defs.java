@@ -1,20 +1,15 @@
 package com.euroTech.stepDefs;
 
-import com.euroTech.pages.HomePage;
 import com.euroTech.pages.LoginPage;
 import com.euroTech.pages.WishList;
 import com.euroTech.utilities.BrowserUtils;
-import com.euroTech.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 
 public class US06_WishList_Step_Defs {
 
-    HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     WishList wishList = new WishList();
 
@@ -33,13 +28,11 @@ public class US06_WishList_Step_Defs {
 
     @Then("The user verifies the product is in wish list")
     public void the_user_verifies_the_product_is_in_wish_list() {
-        wishList.firstProduct.click();
-        wishList.assertProduct();
+        wishList.verifyProduct();
     }
 
     @When("The user sees and clicks cart button")
-    public void the_user_sees_and_clicks_cart_button() {
-    }
+    public void the_user_sees_and_clicks_cart_button() {}
 
     @Then("The user verify that the product has been added")
     public void the_user_verify_that_the_product_has_been_added() {
@@ -48,14 +41,11 @@ public class US06_WishList_Step_Defs {
 
     @And("The user scrolls down")
     public void theUserScrollsDown() {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.get();
-        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", wishList.product2);
-        BrowserUtils.waitFor(2);
+        wishList.scrollDown();
     }
 
     @When("The user sees and clicks delete button")
     public void the_user_sees_and_clicks_delete_button() {
-        BrowserUtils.waitFor(2);
         wishList.clickDeleteButton();
     }
 
@@ -65,8 +55,5 @@ public class US06_WishList_Step_Defs {
     }
 
     @Then("The user verify that the product has been deleted")
-    public void the_user_verify_that_the_product_has_been_deleted() {
-        boolean isProductDeleted = wishList.verifyProductDeleted();
-        Assert.assertTrue(isProductDeleted);
-    }
+    public void the_user_verify_that_the_product_has_been_deleted() { wishList.verifyProductDeleted(); }
 }
