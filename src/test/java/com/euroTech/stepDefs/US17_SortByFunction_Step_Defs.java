@@ -6,6 +6,7 @@ import com.euroTech.pages.HomePage;
 import com.euroTech.pages.SubCategorysPage;
 import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -41,7 +42,12 @@ public class US17_SortByFunction_Step_Defs {
         subCategorysPage.sortByVerify(sortByVerify);
 
     }
+    @Then("The user should be able to select sort by in  on the subCategory  {string}")
+    public void the_user_should_be_able_to_select_sort_by_in_on_the_sub_category(String optionText) {
+    subCategorysPage.selectOptions(optionText);
 
+
+    }
 
 
 }
