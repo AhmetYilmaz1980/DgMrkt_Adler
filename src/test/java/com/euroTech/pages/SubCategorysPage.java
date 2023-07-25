@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import java.util.concurrent.TimeUnit;
 
 public class SubCategorysPage extends BasePage {
     Actions actions = new Actions(Driver.get());
@@ -40,6 +41,19 @@ public class SubCategorysPage extends BasePage {
     public void sortByVerify(String sortByVerify) {
         WebElement actuel = Driver.get().findElement(By.xpath("//option[text()='"+sortByVerify+"']"));
         Assert.assertEquals(sortByVerify,actuel.getText());
+    }
+
+
+    public void selectOptions(String optionsText) {
+        BrowserUtils.waitFor(7);
+        WebElement dropdownElement = Driver.get().findElement(By.id("input-sort"));
+        Select dropdown = new Select(dropdownElement);
+        dropdown.selectByVisibleText(optionsText);
+       // BrowserUtils.waitFor(2);
+        String actualOption = dropdown.getFirstSelectedOption().getText();
+       System.out.println("actualOption = " + actualOption);
+        System.out.println("optionsText = " + optionsText);
+        Assert.assertEquals(optionsText, actualOption);
     }
     public void moveSlider(String priceSlider, String direction) {
         WebElement slider;
