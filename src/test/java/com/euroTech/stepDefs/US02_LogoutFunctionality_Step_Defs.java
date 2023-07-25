@@ -1,18 +1,11 @@
 package com.euroTech.stepDefs;
 
 import com.euroTech.pages.HomePage;
-import com.euroTech.pages.LoginPage;
 import com.euroTech.pages.LogoutPage;
-import com.euroTech.utilities.BrowserUtils;
-import com.euroTech.utilities.ConfigurationReader;
-import com.euroTech.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import static com.euroTech.utilities.Driver.driver;
@@ -23,7 +16,7 @@ public class US02_LogoutFunctionality_Step_Defs {
 
     HomePage homePage = new HomePage();
 
-    LoginPage loginPage = new LoginPage();
+
     LogoutPage logoutPage = new LogoutPage();
 
     Actions actions = new Actions(driver);
