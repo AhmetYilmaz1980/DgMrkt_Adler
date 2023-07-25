@@ -128,7 +128,7 @@ public class SubCategorysPage extends BasePage {
 
     public void clickProductViewIcon(String viewOption) {
 
-        WebElement viewIcon = Driver.get().findElement(By.xpath("//button[@class='btn btn-default btn-custom-view btn-" + viewOption + "']"));
+        WebElement viewIcon = Driver.get().findElement(By.xpath("//button[@onclick=\"category_view.changeView('"+viewOption+"')\"]"));
         viewIcon.click();
         BrowserUtils.waitFor(2);
     }
