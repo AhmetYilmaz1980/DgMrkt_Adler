@@ -87,11 +87,9 @@ public class SubCategorysPage extends BasePage {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(10);
         Integer ersteValue = Integer.valueOf(inputMinValue.getAttribute("value"));
-        System.out.println("AersteValue = " + ersteValue);
         actions.dragAndDropBy(sliderLeft, 100, 0).build().perform();
         BrowserUtils.waitForPageToLoad(15);
         Integer secondValue = Integer.valueOf(inputMinValue.getAttribute("value"));
-        System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue < secondValue);
     }
     public void verifyMinValueDecreased() {
@@ -100,22 +98,18 @@ public class SubCategorysPage extends BasePage {
         actions.dragAndDropBy(sliderLeft, 100, 0).build().perform();
         BrowserUtils.waitFor(3);
         Integer ersteValue = Integer.valueOf(inputMinValue.getAttribute("value"));
-        System.out.println("BersteValue = " + ersteValue);
         actions.dragAndDropBy(sliderLeft, -50, 0).build().perform();
         BrowserUtils.waitFor(3);
         Integer secondValue = Integer.valueOf(inputMinValue.getAttribute("value"));
-        System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue > secondValue);
     }
     public void verifyMaxValueDecreased() {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(5);
         Integer ersteValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
-        System.out.println("CersteValue = " + ersteValue);
         actions.dragAndDropBy(sliderRight, -100, 0).build().perform();
         BrowserUtils.waitForPageToLoad(13);
         Integer secondValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
-        System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue > secondValue);
     }
 
@@ -125,11 +119,9 @@ public class SubCategorysPage extends BasePage {
         actions.dragAndDropBy(sliderRight, -100, 0).build().perform();
         BrowserUtils.waitFor(3);
         Integer ersteValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
-        System.out.println("DersteValue = " + ersteValue);
         actions.dragAndDropBy(sliderRight, 50, 0).build().perform();
         BrowserUtils.waitFor(3);
         Integer secondValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
-        System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue < secondValue);
     }
 }
