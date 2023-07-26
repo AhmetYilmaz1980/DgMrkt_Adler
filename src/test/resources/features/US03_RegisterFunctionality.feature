@@ -1,3 +1,4 @@
+@B7DGMRT-3
 Feature: User Register Functionality
 
   @B7DGMRT-60
