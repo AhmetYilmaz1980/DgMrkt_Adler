@@ -9,7 +9,17 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//div[text()=' Congratulation! Login Successfully']")
     public WebElement posLoginMessage;
 
-    public void hoverOverCategory(){
+
+    @FindBy(xpath = "//button[@class='button-cart'][contains(@onclick,'5736703')]")
+    public WebElement addProductHomepage;
+
+
+
+    @FindBy(xpath = "//div[@id='cart']")
+    public WebElement cartIcon;
+
+
+    public void hoverOverCategory() {
         WebElement categoryBox = Driver.get().findElement(By.xpath("//span[text()='Category']"));
         BrowserUtils.hover(categoryBox);
     }
