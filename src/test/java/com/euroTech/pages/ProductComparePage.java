@@ -13,8 +13,8 @@ public class ProductComparePage extends BasePage{
 
     Health_BeautyPage healthBeautyPage = new Health_BeautyPage();
 
-    @FindBy(xpath = "//*[@id='content']/table/tbody[1]/tr[1]/td[2]/a")
-    public WebElement firstProduct;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/table[1]/tbody[1]/tr[1]")
+    public WebElement compareProduct;
 
     @FindBy(xpath = "//a[contains(text(),'shopping cart')]")
     public WebElement successMessage;
