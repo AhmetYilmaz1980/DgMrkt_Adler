@@ -1,4 +1,4 @@
-@wip2
+
 Feature: Product Compare Function
 
 
@@ -24,8 +24,7 @@ Feature: Product Compare Function
     When The user hover over to Category button
     Then The user clicks to "<category>" button
     When The user click Show button and choose 100
-    Then The user should be able to hover over to "<product>" Product
-    And The user should be able to see and click Compare this Product button
+    Then The user should be able to click to "<product>" Product
     And The user should be able to navigate before page
     When The user click the Product Compare button
     Then The user should be able to see the "<product>" they want to compare on the Product Comparison page
@@ -41,11 +40,9 @@ Feature: Product Compare Function
     Given The user is on the home page
     When The user hover over to Category button
     Then The user clicks to "<category>" button
-    And The user click Show button and choose 100
-    When The user should be able to hover over to "<product>" Product
-    Then The user should be able to see and click Compare this Product button
-    When The user should be able to hover over to "<product2>" Product
-    Then The user should be able to see and click Compare this Product button
+    When The user click Show button and choose 100
+    Then The user should be able to click to "<product>" Product
+    When The user should be able to click to "<product2>" Product
     And The user should be able to see "2" products next to the product comparison button
 
     Examples:
@@ -53,21 +50,20 @@ Feature: Product Compare Function
       | Health & Beauty | 5       | 9        |
       | Televisions     | 4       | 12       |
 
+  @wip2
   Scenario Outline: Add products Product Compare Page separately
 
     Given The user is on the home page
     When The user hover over to Category button
     Then The user clicks to "<category>" button
-    When The user should be able to choose "<page>" and hover over to "<product>" Product
-    Then The user should be able to see and click Compare this Product button
-    And The user should be able to see success message
+    When The user click Show button and choose 100
+    Then The user should be able to click to "<product>" Product
+    And The user should be able to see success message and message should contain the name of the "<product>"
 
     Examples:
-      | category        | page | product |
-      | Health & Beauty | 2    | 5       |
-      | Televisions     | 4    | 11      |
-      | TV Accessories  | 7    | 10      |
-      | Networking      | 1    | 1       |
+      | category        | product            |
+      | Health & Beauty | Capsule Plate 6pcs |
+      | TV Accessories  | Belkin video / audio cable |
 
 
   Scenario Outline: Add the compared products to the cart separately
@@ -76,11 +72,11 @@ Feature: Product Compare Function
     When The user hover over to Category button
     Then The user clicks to "<category>" button
     When The user click Show button and choose 100
-    Then The user should be able to hover over to "<product>" Product
+    Then The user should be able to click to "<product>" Product
     And The user should be able to see and click Compare this Product button
-    Then The user should be able to hover over to "<product2>" Product
+    Then The user should be able to click to "<product2>" Product
     And The user should be able to see and click Compare this Product button
-    Then The user should be able to hover over to "<product3>" Product
+    Then The user should be able to click to "<product3>" Product
     And The user should be able to see and click Compare this Product button
     When The user click the Product Compare button
     Then The user click the add to cart button for first Product
@@ -104,11 +100,11 @@ Feature: Product Compare Function
     When The user hover over to Category button
     Then The user clicks to "<category>" button
     When The user click Show button and choose 100
-    Then The user should be able to hover over to "<product>" Product
+    Then The user should be able to click to "<product>" Product
     And The user should be able to see and click Compare this Product button
-    Then The user should be able to hover over to "<product2>" Product
+    Then The user should be able to click to "<product2>" Product
     And The user should be able to see and click Compare this Product button
-    Then The user should be able to hover over to "<product3>" Product
+    Then The user should be able to click to "<product3>" Product
     And The user should be able to see and click Compare this Product button
     When The user click the Product Compare button
     Then The user click the remove button for first Product

@@ -10,9 +10,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ISelect;
-import org.openqa.selenium.support.ui.Select;
 
 public class US16_ProductCompareFunction_Step_Defs {
 
@@ -23,7 +20,6 @@ public class US16_ProductCompareFunction_Step_Defs {
 
     @When("The user hover over to Category button")
     public void the_user_hover_over_to_category_button() {
-
     }
 
     @Then("The user clicks to {string} button")
@@ -32,23 +28,26 @@ public class US16_ProductCompareFunction_Step_Defs {
     }
 
     @When("The user should be able to choose {string} and hover over to {string} Product")
-    public void the_user_should_be_able_to_choose_and_hover_over_to_product(String page, String product) {
-       healthBeautyPage.pageandProductClick(Integer.parseInt(page),Integer.parseInt(product));
+    public void the_user_should_be_able_to_choose_and_hover_over_to_product( String product) {
+        if(product.length()>=3){
+            productComparePage.getProduct(product);
+        } else {
+            healthBeautyPage.clickCompareButton(Integer.parseInt(product));
+        }
     }
-
 
     @Then("The user should be able to see and click Compare this Product button")
     public void the_user_should_be_able_to_see_and_click_button() {
-
-
     }
 
-    @And("The user should be able to see success message")
-    public void the_user_should_be_able_to_see_success_message() {
+    @And("The user should be able to see success message and message should contain the name of the {string}")
+    public void the_user_should_be_able_to_see_success_message(String product) {
         BrowserUtils.waitFor(2);
         Assert.assertTrue(healthBeautyPage.succesMessage.isDisplayed());
-    }
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(healthBeautyPage.succesMessage.getText().contains(product));
 
+    }
 
     @Then("The user click the Product Compare button")
     public void the_user_click_the_button() {
@@ -69,9 +68,10 @@ public class US16_ProductCompareFunction_Step_Defs {
     @When("The user click Show button and choose {int}")
     public void the_user_click_show_button_and_choose(Integer num) {
         healthBeautyPage.showButton.click();
-        healthBeautyPage.yuzButton.click();
+        healthBeautyPage.hundertButton.click();
     }
-    @When("The user should be able to hover over to {string} Product")
+
+    @When("The user should be able to click to {string} Product")
     public void the_user_should_be_able_to_hover_over_to_product(String product) {
         BrowserUtils.waitFor(4);
         if(product.length()>=3){
@@ -93,16 +93,19 @@ public class US16_ProductCompareFunction_Step_Defs {
         BrowserUtils.waitFor(2);
         productComparePage.clickAddToCart();
     }
+
     @Then("The user should be able to see add to cart success message")
     public void the_user_should_be_able_to_see_add_to_cart_success_message() {
         BrowserUtils.waitFor(2);
         Assert.assertTrue(productComparePage.successMessage.isDisplayed());
     }
+
     @Then("The user click the add to cart button for second Product")
     public void the_user_click_the_add_to_cart_button_for_second_product() {
         BrowserUtils.waitFor(2);
         productComparePage.clickAddToCart();
     }
+
     @Then("The user click the add to cart button for third Product")
     public void the_user_click_the_add_to_cart_button_for_third_product() {
         BrowserUtils.waitFor(2);
@@ -114,16 +117,19 @@ public class US16_ProductCompareFunction_Step_Defs {
         BrowserUtils.waitFor(2);
         productComparePage.clickRemoveBtn();
     }
+
     @Then("The user should be able to see remove success message")
     public void the_user_should_be_able_to_see_remove_success_message() {
         BrowserUtils.waitFor(2);
         Assert.assertTrue(productComparePage.removeSuccessMessage.isDisplayed());
     }
+
     @Then("The user click the remove button for second Product")
     public void the_user_click_the_remove_button_for_second_product() {
         BrowserUtils.waitFor(2);
         productComparePage.clickRemoveBtn();
     }
+
     @Then("The user click the remove button for third Product")
     public void the_user_click_the_remove_button_for_third_product() {
         BrowserUtils.waitFor(2);
