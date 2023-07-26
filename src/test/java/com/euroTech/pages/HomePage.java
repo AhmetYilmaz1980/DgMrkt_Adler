@@ -18,5 +18,4 @@ public class HomePage extends BasePage{
       WebElement subCategory = Driver.get().findElement(By.xpath("//a[text()='"+subMenuName+"']"));
        subCategory.click();
    }
-
 }

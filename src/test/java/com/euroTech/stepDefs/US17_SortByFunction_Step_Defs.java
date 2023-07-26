@@ -13,8 +13,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
 public class US17_SortByFunction_Step_Defs {
     HomePage homePage = new HomePage();
     CategoryPage categoryPage = new CategoryPage();
@@ -27,7 +25,6 @@ public class US17_SortByFunction_Step_Defs {
     public void the_user_hover_over_in_category_menu() {
         homePage.hoverOverCategory();
     }
-
     @Then("The user clicks subcategory {string}")
     public void the_user_clicks_subcategory(String subMenuName) {
         homePage.clickSubMenu(subMenuName);
@@ -38,15 +35,17 @@ public class US17_SortByFunction_Step_Defs {
     public void the_user_should_be_able_to_see_sort_by_in_on_the_sub_category_page(String sortBy) {
         subCategorysPage.sortDropdown(sortBy);
     }
+    @Then("The user must have selected {string}")
+    public void the_user_must_have_selected(String sortByVerify) {
 
-    @Then("The user selected {string}")
-    public void the_user_selected(String sortByVerify) {
         subCategorysPage.sortByVerify(sortByVerify);
     }
+    @Then("The user should be able to select sort by in  on the subCategory  {string}")
+    public void the_user_should_be_able_to_select_sort_by_in_on_the_sub_category(String optionText) {
+    subCategorysPage.selectOptions(optionText);
 
-    @And("The user gets product list")
-    public void theUserGetsProductList() {
-        List<String> elementsText = BrowserUtils.getElementsText(healthBeautyPage.webElementList);
-        System.out.println("elementsText = " + elementsText);
+
     }
+
+
 }

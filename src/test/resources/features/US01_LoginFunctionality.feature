@@ -10,9 +10,8 @@ Feature: Login DgMrkt on Homepage
 
 
     Examples:
-      | email          | password     |
-      | ali1@gmail.com | galatasaray. |
-
+      | email                    | password |
+      | ali1@gmail.com | galatasaray.  |
 
 
 
