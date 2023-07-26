@@ -1,4 +1,4 @@
 package com.euroTech.pages;
 
-public class TVAccessoriesPage {
+public class TVAccessoriesPage extends BasePage {
 }
