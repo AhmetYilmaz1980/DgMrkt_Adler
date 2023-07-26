@@ -1,7 +1,7 @@
 package com.euroTech.stepDefs;
 
 import com.euroTech.pages.LoginPage;
-import com.euroTech.pages.WishList;
+import com.euroTech.pages.WishListPage;
 import com.euroTech.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 public class US06_WishList_Step_Defs {
 
     LoginPage loginPage = new LoginPage();
-    WishList wishList = new WishList();
+    WishListPage wishListPage = new WishListPage();
 
     @Given("The user logs in to My Account")
     public void the_user_logs_in_to_my_account() {
@@ -23,12 +23,12 @@ public class US06_WishList_Step_Defs {
     @When("The user clicks on wish list button")
     public void the_user_clicks_on_wish_list_button() {
         BrowserUtils.waitFor(2);
-        wishList.wishBtn();
+        wishListPage.wishBtn();
     }
 
     @Then("The user verifies the product is in wish list")
     public void the_user_verifies_the_product_is_in_wish_list() {
-        wishList.verifyProduct();
+        wishListPage.verifyProduct();
     }
 
     @When("The user sees and clicks cart button")
@@ -36,24 +36,24 @@ public class US06_WishList_Step_Defs {
 
     @Then("The user verify that the {string} has been added")
     public void the_user_verify_that_the_product_has_been_added(String productName) {
-        wishList.verifyCart(productName);
+        wishListPage.verifyCart(productName);
     }
 
     @And("The user scrolls down")
     public void theUserScrollsDown() {
-        wishList.scrollDown();
+        wishListPage.scrollDown();
     }
 
     @When("The user sees and clicks delete button")
     public void the_user_sees_and_clicks_delete_button() {
-        wishList.clickDeleteButton();
+        wishListPage.clickDeleteButton();
     }
 
     @When("The user updates wishlist")
     public void the_user_updates_wishlist() {
-        wishList.updateWishlist();
+        wishListPage.updateWishlist();
     }
 
     @Then("The user verify that the product has been deleted")
-    public void the_user_verify_that_the_product_has_been_deleted() { wishList.verifyProductDeleted(); }
+    public void the_user_verify_that_the_product_has_been_deleted() { wishListPage.verifyProductDeleted(); }
 }
