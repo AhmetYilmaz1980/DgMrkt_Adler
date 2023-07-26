@@ -12,7 +12,7 @@ Feature: Wish List Test
   @wish2
   Scenario: The user should be able to add products to cart
     And The user sees and clicks cart button
-    Then The user verify that the product has been added
+    Then The user verify that the "Fitbit Aria Air Smart Bathroom Scale" has been added
 
   @wish3
   Scenario: The user should be able to delete products from wish list

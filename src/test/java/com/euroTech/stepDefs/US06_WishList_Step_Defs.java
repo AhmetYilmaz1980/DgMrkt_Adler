@@ -34,9 +34,9 @@ public class US06_WishList_Step_Defs {
     @When("The user sees and clicks cart button")
     public void the_user_sees_and_clicks_cart_button() {}
 
-    @Then("The user verify that the product has been added")
-    public void the_user_verify_that_the_product_has_been_added() {
-        wishList.verifyCart();
+    @Then("The user verify that the {string} has been added")
+    public void the_user_verify_that_the_product_has_been_added(String productName) {
+        wishList.verifyCart(productName);
     }
 
     @And("The user scrolls down")
