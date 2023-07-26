@@ -74,7 +74,7 @@ public class SubCategorysPage extends BasePage {
         Integer ersteValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("AersteValue = " + ersteValue);
         actions.dragAndDropBy(sliderLeft, 100, 0).build().perform();
-        BrowserUtils.waitForPageToLoad(10);
+        BrowserUtils.waitForPageToLoad(15);
         Integer secondValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);
         Assert.assertTrue(ersteValue < secondValue);
@@ -83,13 +83,10 @@ public class SubCategorysPage extends BasePage {
         Driver.get().navigate().refresh();
         BrowserUtils.waitForPageToLoad(10);
         actions.dragAndDropBy(sliderLeft, 100, 0).build().perform();
-        //moveSlider("sliderLeft", "right");
-        //moveSlider("sliderLeft", "right");
         BrowserUtils.waitFor(3);
         Integer ersteValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("BersteValue = " + ersteValue);
         actions.dragAndDropBy(sliderLeft, -50, 0).build().perform();
-        //moveSlider("sliderLeft", "left");
         BrowserUtils.waitFor(3);
         Integer secondValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         System.out.println("secondValue = " + secondValue);

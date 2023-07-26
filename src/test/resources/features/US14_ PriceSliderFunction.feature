@@ -4,13 +4,15 @@ Feature: As a user, I should be able to bring the products in the price range
   @B7DGMRT-32
   Scenario Outline: The user can scroll the price slider.
     Given The user is on the home page
-    When The user hover over category and select "<subcategory>".
+    When The user hover over in category menu
+    And The user clicks subcategory "<subMenuName>"
+   # When The user hover over category and select "<subcategory>".
     Then The user sees price slider.
     When  The user slides the "<priceSlider>" to the "<direction>".
     Then The user sees that the value of the "<priceSlider>" changes in proportion to the slider movement "<direction>".
 
     Examples:
-      | subcategory     | priceSlider | direction |
+      | subMenuName     | priceSlider | direction |
       | Health & Beauty | sliderLeft  | right     |
       | Health & Beauty | sliderLeft  | left      |
       | Health & Beauty | sliderRight | left      |
