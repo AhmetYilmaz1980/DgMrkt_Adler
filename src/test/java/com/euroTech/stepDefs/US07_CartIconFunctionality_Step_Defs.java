@@ -40,6 +40,7 @@ public class US07_CartIconFunctionality_Step_Defs {
     @Then("The user is able to receive a verify message that there isn't any product in the cart.")
     public void the_user_is_able_to_receive_a_there_isn_t_any_product_in_the_cart() {
         String expectedMessage = "Your shopping cart is empty!";
+        BrowserUtils.waitFor(2);
         Assert.assertEquals(cartIcon.emptyCart.getText(), expectedMessage);
 
     }
@@ -75,21 +76,31 @@ public class US07_CartIconFunctionality_Step_Defs {
         BrowserUtils.verifyElementDisplayed(cartIcon.checkOutButton);
     }
 
-    @Then("The user is able to navigate to check out page by clicking the check out button")
-    public void the_user_is_able_to_navigate_to_check_out_page_by_clicking_the_check_out_button() {
+    @Then("The user is able to navigate to shopping cart by clicking the check out button")
+    public void the_user_is_able_to_navigate_to_shopping_cart_by_clicking_the_check_out_button() {
         cartIcon.checkOutButton.click();
+        BrowserUtils.waitFor(2);
         String expectedUrl = "https://dgmarkt.com/index.php?route=checkout/checkout";
         Assert.assertEquals(Driver.get().getCurrentUrl(), expectedUrl);
+
+        Assert.assertTrue(Driver.driver.getCurrentUrl().contains("route=checkout/checkout"));
     }
 
     @Then("The user is able to continue to checkout to order the products")
     public void the_user_is_able_to_continue_to_checkout_to_order_the_products() {
+
         checkOutPage.continueButton.click();
+        BrowserUtils.waitFor(2);
         checkOutPage.continueShippingAddress.click();
+        BrowserUtils.waitFor(2);
         checkOutPage.continueShippingMethod.click();
+        BrowserUtils.waitFor(2);
         checkOutPage.checkbox.click();
+        BrowserUtils.waitFor(2);
         checkOutPage.continuePaymentMethod.click();
+        BrowserUtils.waitFor(2);
         checkOutPage.confirmButton.click();
+        BrowserUtils.waitFor(3);
 
         String expectedUrl = "https://dgmarkt.com/index.php?route=checkout/success";
         Assert.assertEquals(expectedUrl, Driver.get().getCurrentUrl());
