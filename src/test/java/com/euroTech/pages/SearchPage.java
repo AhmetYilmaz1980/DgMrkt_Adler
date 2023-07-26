@@ -29,4 +29,6 @@ public class SearchPage extends BasePage{
     @FindBy(xpath = "//a[@class='a-top-link']//span[contains(text(),'Home')]")
     public WebElement homePageBut;
 
+    @FindBy(xpath = "//input[@name='sub_category']")
+    public WebElement subCatBox;
 }

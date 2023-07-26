@@ -68,7 +68,7 @@ public class US05_SearchIconFunctionality_StepDefs {
         searchPage.blackSearchButton.click();
     }
 
-    int list1size=0;
+    int list1size = 0;
 
     @Given("Get search result as a list1")
     public int get_search_result_as_a_list1() {
@@ -80,7 +80,7 @@ public class US05_SearchIconFunctionality_StepDefs {
         return list1size;
     }
 
-    int list2size=0;
+    int list2size = 0;
 
     @Given("Get search result as a list2")
     public int get_search_result_as_a_list2() {
@@ -102,6 +102,17 @@ public class US05_SearchIconFunctionality_StepDefs {
     @Given("Verify that the results are different")
     public void verify_that_the_results_are_different() {
         Assert.assertNotEquals(list1size, list2size);
+    }
+
+    @Given("Enter a search term {string} and choose subcategory {string} then click Search in subcategories box then click black search button")
+    public void enter_a_search_term_and_choose_subcategory_then_click_search_in_subcategories_box_then_click_black_search_button(String urun, String subCat) {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        searchPage.BelowSearchBox.sendKeys(urun);
+        WebElement ddm = searchPage.subCatDDM;
+        Select select = new Select(ddm);
+        select.selectByVisibleText(subCat);
+        searchPage.subCatBox.click();
+        searchPage.blackSearchButton.click();
     }
 
 

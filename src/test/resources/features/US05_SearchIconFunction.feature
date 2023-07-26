@@ -61,7 +61,18 @@ Feature: Search Icon Funcionality
     * Get search result as a list2
     * Verify that the results are different
 
-
+  Scenario: Search Term In Different Subcategories With Sub Cat Box
+    * The user is on the home page
+    * Click Search icon
+    * Click Search text box search icon
+    * Enter a search term "hdmi" and choose subcategory "Networking" then click black search button
+    * Get search result as a list1
+    * The user is on the home page
+    * Click Search icon
+    * Click Search text box search icon
+    * Enter a search term "hdmi" and choose subcategory "Networking" then click Search in subcategories box then click black search button
+    * Get search result as a list2
+    * Verify that the results are different
 
 
 
