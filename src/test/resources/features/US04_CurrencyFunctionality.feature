@@ -1,4 +1,4 @@
-@B7DGMRT-4
+@US04
 Feature: Currency Function
 
   Background:
