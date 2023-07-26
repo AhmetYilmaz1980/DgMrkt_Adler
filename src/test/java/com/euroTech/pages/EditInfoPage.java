@@ -29,6 +29,10 @@ public class EditInfoPage extends BasePage {
     @FindBy(className = "text-danger")
     public WebElement blankInputWarningMessage;
 
+    /** Um eine dynamic method zu erstellen
+     * wird 'if' in einem for block 'break' addiert.
+     * Mit Negative Sceneries man braucht das um es zu verifizieren.
+     */
     public void editInformation(String firstName, String lastName, String email, String telephone) {
 
         for (int i = 0; i < 1; i++) {
@@ -75,14 +79,22 @@ public class EditInfoPage extends BasePage {
     public void verifyGetWarningMessage(String expectedMessage) {
         BrowserUtils.waitForVisibility(blankInputWarningMessage, 3);
         String actualWarningMessage = blankInputWarningMessage.getText();
-        assertEquals(expectedMessage, actualWarningMessage);
+        assertEquals("Messages does NOT match",expectedMessage, actualWarningMessage);
     }
+
+    /**Reset E-Mail -
+     * am Anfang um keinen Fehler (Negative Benachrichtigungen) zu bekommen
+     * muss man Login credentials(E-Mail) erneuern - zürücksetzen
+     */
     public void resetEmail() {
         accountPage.selectButtonFromAccountPage("Edit Account");
         emailInput.clear();
         emailInput.sendKeys("ali1@gmail.com");
         continueButton.click();
+
     }
+    /**Getting POP-UP messages
+     * and control that if contains valid or @*/
     public void getDisappearingWarningMessage(String message) {
         String actualMessage;
         if (message.contains("@")) {

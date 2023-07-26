@@ -2,7 +2,6 @@ package com.euroTech.pages;
 
 import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -12,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class WishList extends BasePage {
+public class WishListPage extends BasePage {
 
     @FindBy(xpath = "//*[@href='https://dgmarkt.com/index.php?route=account/wishlist']")
     public WebElement wishListIcon;
