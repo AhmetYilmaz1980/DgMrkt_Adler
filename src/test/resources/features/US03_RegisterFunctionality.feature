@@ -1,9 +1,10 @@
 Feature: User Register Functionality
 
+  @B7DGMRT-60
   Background: Click on My User Account and Register button
     Given The user clicks on the My Account and Register section
 
-
+  @B7DGMRT-59
   Scenario Outline: To register in the application by entering valid criteria.
     When The user enters "<firstName>" and "<lastName>" and "<email>" and "<telephone>" and "<password>" and "<passwordConfirm>"
     When The user clicks subscribe "<yesNo>" and privacy policy
@@ -17,7 +18,7 @@ Feature: User Register Functionality
       | Nurzeynep2 | zeynep1  | J01@gmail.co    | 01234567891 | Test1234! | Test1234!       | Yes   |
       | nerede2    | nerede1  | J02@hotmail.com | 01234567891 | Test1234! | Test1234!       | Yes   |
 
-@wip
+  @B7DGMRT-61
   Scenario Outline: The user enters invalid value
     When The user enters "<firstName>" and "<lastName>" and "<email>" and "<telephone>" and "<password>" and "<passwordConfirm>"
     And The user clicks subscribe "<yesNo>" and privacy policy
@@ -44,7 +45,7 @@ Feature: User Register Functionality
       | erva                              | zeynep                            | Js@gmail.com | 01234567891                       |           | 456789          | Yes   | Password must be between 4 and 20 characters!   | Password confirmation does not match password! |
       | erva                              | zeynep                            | Js@gmail.com | 01234567891                       | 456789    |                 | Yes   |                                                 | Password confirmation does not match password! |
 
-
+  @B7DGMRT-62
   Scenario Outline: User does not click Privacy Policy
     When The user enters "<firstName>" and "<lastName>" and "<email>" and "<telephone>" and "<password>" and "<passwordConfirm>"
     And The user clicks subscribe "<yesNo>"
