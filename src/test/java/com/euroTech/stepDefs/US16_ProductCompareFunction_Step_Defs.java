@@ -40,6 +40,7 @@ public class US16_ProductCompareFunction_Step_Defs {
     @Then("The user should be able to see and click Compare this Product button")
     public void the_user_should_be_able_to_see_and_click_button() {
 
+
     }
 
     @And("The user should be able to see success message")
@@ -61,11 +62,8 @@ public class US16_ProductCompareFunction_Step_Defs {
 
     @Then("The user should be able to see the {string} they want to compare on the Product Comparison page")
     public void the_user_should_be_able_to_see_the_they_want_to_compare_on_the_product_comparison_page(String product) {
-        BrowserUtils.waitFor(3);
-        productComparePage.getCompareProduct();
-        BrowserUtils.waitFor(2);
-        productComparePage.equalsProduct(Integer.parseInt(product));
-
+        BrowserUtils.waitFor(4);
+        Assert.assertEquals(productComparePage.firstProduct.getText(),productComparePage.getProductName(product));
     }
 
     @When("The user click Show button and choose {int}")
@@ -75,9 +73,19 @@ public class US16_ProductCompareFunction_Step_Defs {
     }
     @When("The user should be able to hover over to {string} Product")
     public void the_user_should_be_able_to_hover_over_to_product(String product) {
-        BrowserUtils.waitFor(2);
-            healthBeautyPage.clickCompareButton(Integer.parseInt(product));
-          //  productComparePage.getTextProduct(Integer.parseInt(product));
+        BrowserUtils.waitFor(4);
+        if(product.length()>=3){
+            productComparePage.getProduct(product).click();
+            BrowserUtils.waitFor(2);
+            Driver.get().findElement(By.xpath("//button[@class='btn btn-default btn-compare']")).click();
+        } else {
+           healthBeautyPage.clickCompareButton(Integer.parseInt(product));
+        }
+    }
+
+    @Then("The user should be able to navigate before page")
+    public void the_user_should_be_able_to_navigate_before_page() {
+       healthBeautyPage.productPageHealthandBeautyBtn.click();
     }
 
     @Then("The user click the add to cart button for first Product")

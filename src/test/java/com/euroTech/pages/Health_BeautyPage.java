@@ -28,11 +28,11 @@ public class Health_BeautyPage extends BasePage {
     @FindBy(xpath = "(//a[text()='Health & Beauty'])[1]")
     public WebElement healthandBeautyButton;
 
+    @FindBy(xpath = "//*[@id='header']/div[2]/div/div/ul/li[2]/a")
+    public WebElement productPageHealthandBeautyBtn;
+
     @FindBy(xpath = "//button[@class='button-compare']")
     public List<WebElement> beautyCompareButton;
-
-    @FindBy(xpath = "//div[@class='caption']")
-    public List<WebElement> products;
 
     @FindBy(xpath = "//select[@id='input-limit']")
     public WebElement showButton;

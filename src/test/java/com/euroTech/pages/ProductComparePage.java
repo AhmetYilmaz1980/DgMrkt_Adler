@@ -1,7 +1,9 @@
 package com.euroTech.pages;
 
 import com.euroTech.utilities.BrowserUtils;
+import com.euroTech.utilities.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -66,17 +68,6 @@ public class ProductComparePage extends BasePage{
     }
 
 
-    public String getTextProduct(int product){
-        return healthBeautyPage.products.get(product).getText();
-    }
-
-    public String getCompareProduct(){
-        return firstProduct.getText();
-    }
-
-    public void equalsProduct(int product){
-        Assert.assertEquals(getTextProduct(product),getCompareProduct());
-    }
 
     public void productCompareNum(int num){
         if(num==1){
@@ -86,6 +77,15 @@ public class ProductComparePage extends BasePage{
         } else if (num==3) {
             Assert.assertTrue(productCompareThree.isDisplayed());
         }
+    }
+
+    public String getProductName(String product){
+       WebElement product1 = Driver.get().findElement(By.xpath( "//a[normalize-space()='" +product+ "']"));
+        return product1.getText();
+    }
+
+    public WebElement getProduct(String product){
+        return Driver.get().findElement(By.xpath( "//a[normalize-space()='"+product+"']"));
     }
 
 

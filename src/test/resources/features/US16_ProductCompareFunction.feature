@@ -1,3 +1,4 @@
+@wip2
 Feature: Product Compare Function
 
 
@@ -25,36 +26,32 @@ Feature: Product Compare Function
     When The user click Show button and choose 100
     Then The user should be able to hover over to "<product>" Product
     And The user should be able to see and click Compare this Product button
+    And The user should be able to navigate before page
     When The user click the Product Compare button
     Then The user should be able to see the "<product>" they want to compare on the Product Comparison page
 
     Examples:
-      | category        | product |
-      | Health & Beauty | 5       |
+      | category        | product              |
+      | Health & Beauty | Capsule Plate 6pcs   |
+      | TV Accessories  | Belkin adapter cable |
 
 
-  @wip2
   Scenario Outline: The Products want to compare on the Product Comparison page
 
-      Given The user is on the home page
-      When The user hover over to Category button
-      Then The user clicks to "<category>" button
-      And The user click Show button and choose 100
-      When The user should be able to hover over to "<product>" Product
-      Then The user should be able to see and click Compare this Product button
-      When The user should be able to hover over to "<product2>" Product
-      Then The user should be able to see and click Compare this Product button
-      And The user should be able to see "2" products next to the product comparison button
+    Given The user is on the home page
+    When The user hover over to Category button
+    Then The user clicks to "<category>" button
+    And The user click Show button and choose 100
+    When The user should be able to hover over to "<product>" Product
+    Then The user should be able to see and click Compare this Product button
+    When The user should be able to hover over to "<product2>" Product
+    Then The user should be able to see and click Compare this Product button
+    And The user should be able to see "2" products next to the product comparison button
 
-      Examples:
-        | category        | product |product2 |
-        | Health & Beauty | 5       | 9      |
-        | Televisions  | 4       | 12      |
-
-
-
-
-
+    Examples:
+      | category        | product | product2 |
+      | Health & Beauty | 5       | 9        |
+      | Televisions     | 4       | 12       |
 
   Scenario Outline: Add products Product Compare Page separately
 
@@ -99,7 +96,6 @@ Feature: Product Compare Function
       | Health & Beauty | 5       | 4        | 1        |
       | Networking      | 1       | 8        | 11       |
       | Televisions     | 4       | 11       | 6        |
-
 
 
   Scenario Outline: Remove the compared products separately
