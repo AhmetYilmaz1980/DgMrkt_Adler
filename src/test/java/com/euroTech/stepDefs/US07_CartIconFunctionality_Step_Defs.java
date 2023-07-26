@@ -8,19 +8,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-import java.util.List;
-
 public class US07_CartIconFunctionality_Step_Defs {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
-    CartIcon cartIcon = new CartIcon();
+    CartIconPage cartIconPage = new CartIconPage();
     CheckOutPage checkOutPage = new CheckOutPage();
     SecurityPage securityPage= new SecurityPage();
 
 
     @Then("The user is able to see the product added to the cart")
     public void the_user_is_able_to_see_the_product_added_to_the_cart() {
-        BrowserUtils.verifyElementDisplayed(cartIcon.firstProduct);
+        BrowserUtils.verifyElementDisplayed(cartIconPage.firstProduct);
 
     }
 
@@ -41,13 +39,13 @@ public class US07_CartIconFunctionality_Step_Defs {
     public void the_user_is_able_to_receive_a_there_isn_t_any_product_in_the_cart() {
         String expectedMessage = "Your shopping cart is empty!";
         BrowserUtils.waitFor(2);
-        Assert.assertEquals(cartIcon.emptyCart.getText(), expectedMessage);
+        Assert.assertEquals(cartIconPage.emptyCart.getText(), expectedMessage);
 
     }
 
     @Then("The user is able to click the view cart button on the side window")
     public void the_user_is_able_to_click_the_view_cart_button_on_the_side_window() {
-        cartIcon.viewCartIcon.click();
+        cartIconPage.viewCartIcon.click();
         BrowserUtils.waitFor(3);
     }
 
@@ -61,24 +59,24 @@ public class US07_CartIconFunctionality_Step_Defs {
 
     @Then("The user is able to navigate to {string}")
     public void the_user_is_able_to_navigate_to(String subcategiories) {
-        cartIcon.subcategories(subcategiories);
+        cartIconPage.subcategories(subcategiories);
 
     }
 
     @Then("The user is able to add {string} to the cart")
     public void the_user_is_able_to_add_to_the_cart(String products) {
-        cartIcon.addProducts(products);
+        cartIconPage.addProducts(products);
 
     }
 
     @And("The user is able to see the check out button")
     public void the_user_is_able_to_see_the_check_out_button() {
-        BrowserUtils.verifyElementDisplayed(cartIcon.checkOutButton);
+        BrowserUtils.verifyElementDisplayed(cartIconPage.checkOutButton);
     }
 
     @Then("The user is able to navigate to shopping cart by clicking the check out button")
     public void the_user_is_able_to_navigate_to_shopping_cart_by_clicking_the_check_out_button() {
-        cartIcon.checkOutButton.click();
+        cartIconPage.checkOutButton.click();
         BrowserUtils.waitFor(2);
         String expectedUrl = "https://dgmarkt.com/index.php?route=checkout/checkout";
         Assert.assertEquals(Driver.get().getCurrentUrl(), expectedUrl);
