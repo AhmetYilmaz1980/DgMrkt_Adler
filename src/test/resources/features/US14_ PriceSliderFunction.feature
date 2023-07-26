@@ -1,6 +1,7 @@
 Feature: As a user, I should be able to bring the products in the price range
   I want on the Sub-Category Page by using the PRICE slider.
-  @slider
+
+  @B7DGMRT-32
   Scenario Outline: The user can scroll the price slider.
     Given The user is on the home page
     When The user hover over category and select "<subcategory>".
