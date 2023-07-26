@@ -6,7 +6,7 @@ Feature: Currency Function
     When The user clicks to My Account
     Then The user should be able to see and click Login button
 
-    @B7DGMRT-40
+  @B7DGMRT-40
   Scenario Outline: The user should be able to see products price with currency of choice
     When The user enters correct "<email>" ,"<password>" and clicks black login button
     Then The user should be able to login and see positive login message
