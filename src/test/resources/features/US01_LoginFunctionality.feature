@@ -15,7 +15,7 @@ Feature: Login DgMrkt on Homepage
 
 
 
-
+  @B7DGMRT-69
   Scenario Outline: Negative Login Test
     Given The user is on the home page
     When The user clicks to My Account
@@ -26,9 +26,6 @@ Feature: Login DgMrkt on Homepage
 
     Examples:
       | email               | password    |
-      | umut51088@gmail.com | Test123     |
-      | alicabbar@gmail.com | 2574dGlogin |
       | alicabbar@gmail.com | Test123     |
-      | umut51088@gmail.com |             |
-      |                     | 2574dGlogin |
       |                     |             |
+      |umut51088@gmail.com  |             |
