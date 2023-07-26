@@ -47,3 +47,10 @@ Feature: Cat-Subcategory Sort By Function
       | Networking      | Model (A - Z)      | Model (A - Z)      |
       | Networking      | Model (Z - A)      | Model (Z - A)      |
 
+    @test
+    Scenario:
+      Given The user is on the home page
+      When The user hover over in category menu
+      Then The user clicks subcategory "Health & Beauty"
+      And The user gets product list
+

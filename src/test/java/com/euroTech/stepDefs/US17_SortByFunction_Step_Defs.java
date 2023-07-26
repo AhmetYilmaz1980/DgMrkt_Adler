@@ -4,6 +4,7 @@ import com.euroTech.pages.CategoryPage;
 import com.euroTech.pages.Health_BeautyPage;
 import com.euroTech.pages.HomePage;
 import com.euroTech.pages.SubCategorysPage;
+import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -11,6 +12,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class US17_SortByFunction_Step_Defs {
     HomePage homePage = new HomePage();
@@ -39,5 +42,11 @@ public class US17_SortByFunction_Step_Defs {
     @Then("The user selected {string}")
     public void the_user_selected(String sortByVerify) {
         subCategorysPage.sortByVerify(sortByVerify);
+    }
+
+    @And("The user gets product list")
+    public void theUserGetsProductList() {
+        List<String> elementsText = BrowserUtils.getElementsText(healthBeautyPage.webElementList);
+        System.out.println("elementsText = " + elementsText);
     }
 }

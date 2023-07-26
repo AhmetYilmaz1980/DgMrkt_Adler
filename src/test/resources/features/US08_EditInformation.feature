@@ -1,4 +1,4 @@
-@US08
+@mvn @B7DGMRT-8
 Feature: Edit-Update Account Information
 
   Background:
