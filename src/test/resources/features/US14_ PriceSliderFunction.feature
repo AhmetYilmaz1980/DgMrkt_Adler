@@ -1,3 +1,4 @@
+@B7DGMRT-14
 Feature: As a user, I should be able to bring the products in the price range
   I want on the Sub-Category Page by using the PRICE slider.
 
@@ -83,8 +84,8 @@ Feature: As a user, I should be able to bring the products in the price range
     Examples:
       | minValue | maxValue |
       | 108      | 485      |
-      | 108      | 485      |
-      | 108      | 485      |
+      | 103      | 480      |
+      | 113      | 500      |
 
   @B7DGMRT-82
   Scenario Outline:  The user can scroll the price slider to set a specific price range in "TV Accessories"
@@ -95,8 +96,8 @@ Feature: As a user, I should be able to bring the products in the price range
     Examples:
       | minValue | maxValue |
       | 109      | 493      |
-      | 109      | 493      |
-      | 109      | 493      |
+      | 104      | 488      |
+      | 114      | 498      |
 
   @B7DGMRT-84
   Scenario Outline:  The user can scroll the price slider to set a specific price range in "Networking"
@@ -107,6 +108,6 @@ Feature: As a user, I should be able to bring the products in the price range
     Examples:
       | minValue | maxValue |
       | 110      | 494      |
-      | 110      | 494      |
-      | 110      | 494      |
+      | 105      | 489      |
+      | 115      | 499      |
 
