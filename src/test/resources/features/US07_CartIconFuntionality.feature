@@ -1,4 +1,4 @@
-B7DGMRT-7
+@B7DGMRT-7
 Feature: The Functionality of the Cart Icon
 
   @cart
