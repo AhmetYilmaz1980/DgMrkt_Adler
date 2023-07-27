@@ -5,7 +5,6 @@ import com.euroTech.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 
 public class US04_CurrencyFuncitionality_Step_Defs {
 
@@ -15,7 +14,7 @@ public class US04_CurrencyFuncitionality_Step_Defs {
 
     SecurityPage securityPage = new SecurityPage();
 
-    CheckoutPage checkoutPage=new CheckoutPage();
+    CheckoutPurchPage checkoutPurchPage =new CheckoutPurchPage();
 
     OrderPlacedPage orderPlacedPage= new OrderPlacedPage();
 
@@ -55,25 +54,25 @@ public class US04_CurrencyFuncitionality_Step_Defs {
     @Then("The user clicks on continue button with existing address on billing and delivery details tabs")
     public void the_user_clicks_on_continue_button_with_existing_address_on_billing_and_delivery_details_tabs() {
         BrowserUtils.waitFor(2);
-        checkoutPage.continueBillingAddress.click();
-        checkoutPage.continueDeliveryAddress.click();
+        checkoutPurchPage.continueBillingAddress.click();
+        checkoutPurchPage.continueDeliveryAddress.click();
         BrowserUtils.waitFor(2);
     }
     @Then("The user clicks on continue button on delivery method tab")
     public void the_user_clicks_on_continue_button_on_delivery_method_tab() {
-        checkoutPage.continueDeliveryMethod.click();
+        checkoutPurchPage.continueDeliveryMethod.click();
         BrowserUtils.waitFor(2);
     }
     @Then("The user clicks on continue and terms &condition button on payment method tab")
     public void the_user_clicks_on_continue_and_terms_condition_button_on_payment_method_tab() {
-        checkoutPage.termsAndConditions.click();
-        checkoutPage.continuePaymentMethod.click();
+        checkoutPurchPage.termsAndConditions.click();
+        checkoutPurchPage.continuePaymentMethod.click();
         BrowserUtils.waitFor(2);
     }
     @When("The user should be able to be see total price with {string} of {string} and clicks on confirm order button")
     public void the_user_should_be_able_to_be_see_total_price_with_of_and_clicks_on_confirm_order_button(String currency, String symbol) {
-        checkoutPage.totalPriceWithSymbol(currency,symbol);
-        checkoutPage.confirmButton.click();
+        checkoutPurchPage.totalPriceWithSymbol(currency,symbol);
+        checkoutPurchPage.confirmButton.click();
         BrowserUtils.waitFor(2);
     }
     @Then("The user should be able to see that the order has been placed message")
