@@ -1,7 +1,8 @@
-
+@B7DGMRT-16
 Feature: Product Compare Function
 
 
+  @B7DGMRT-95
   Scenario Outline: Navigate to Product Compare Page
 
     Given  The user is on the home page
@@ -17,8 +18,8 @@ Feature: Product Compare Function
       | Networking      |
       | Televisions     |
 
-
-  Scenario Outline: The Products they want to compare on the Product Comparison page
+@B7DGMRT-96
+Scenario Outline: The Products they want to compare on the Product Comparison page
 
     Given The user is on the home page
     When The user hover over to Category button
@@ -30,12 +31,14 @@ Feature: Product Compare Function
     Then The user should be able to see the "<product>" they want to compare on the Product Comparison page
 
     Examples:
-      | category        | product              |
-      | Health & Beauty | Capsule Plate 6pcs   |
-      | TV Accessories  | Belkin adapter cable |
+      | category        | product                                |
+      | Televisions     | Cello C4020DVB 40\" LED-backlit LCD TV |
+      | Networking      | Belkin Secure Flip KVM Switch          |
+      | Health & Beauty | Capsule Plate 6pcs                     |
+      | TV Accessories  | Belkin adapter cable                   |
 
-
-  Scenario Outline: The Products want to compare on the Product Comparison page
+@B7DGMRT-97
+Scenario Outline: The Products want to compare on the Product Comparison page
 
     Given The user is on the home page
     When The user hover over to Category button
@@ -50,8 +53,8 @@ Feature: Product Compare Function
       | Health & Beauty | 5       | 9        |
       | Televisions     | 4       | 12       |
 
-  @wip2
-  Scenario Outline: Add products Product Compare Page separately
+  @B7DGMRT-98
+  Scenario Outline: Add products Product Compare Page separately and see success message
 
     Given The user is on the home page
     When The user hover over to Category button
@@ -61,11 +64,13 @@ Feature: Product Compare Function
     And The user should be able to see success message and message should contain the name of the "<product>"
 
     Examples:
-      | category        | product            |
-      | Health & Beauty | Capsule Plate 6pcs |
-      | TV Accessories  | Belkin video / audio cable |
+      | category        | product                    |
+      | Televisions     | Cello C4020DVB 40\" LED-backlit LCD TV |
+      | Networking      | Belkin Secure Flip KVM Switch          |
+      | Health & Beauty | Capsule Plate 6pcs                     |
+      | TV Accessories  | Belkin adapter cable                   |
 
-
+  @B7DGMRT-99
   Scenario Outline: Add the compared products to the cart separately
 
     Given The user is on the home page
@@ -94,6 +99,7 @@ Feature: Product Compare Function
       | Televisions     | 4       | 11       | 6        |
 
 
+  @B7DGMRT-100
   Scenario Outline: Remove the compared products separately
 
     Given The user is on the home page

@@ -62,7 +62,8 @@ public class US16_ProductCompareFunction_Step_Defs {
     @Then("The user should be able to see the {string} they want to compare on the Product Comparison page")
     public void the_user_should_be_able_to_see_the_they_want_to_compare_on_the_product_comparison_page(String product) {
         BrowserUtils.waitFor(4);
-        Assert.assertTrue(productComparePage.compareProduct.getText().contains(product));
+        Assert.assertTrue(productComparePage.compareProduct.getText().contains(productComparePage.getProductName(product)));
+
     }
 
     @When("The user click Show button and choose {int}")
