@@ -1,6 +1,8 @@
 package com.euroTech.pages;
 import com.euroTech.utilities.BrowserUtils;
 import org.junit.Assert;
+import com.euroTech.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -17,6 +19,13 @@ public class HomePage extends BasePage{
 
     @FindBy(css ="[data-src=\"https://dgmarkt.com/image/cache/catalog/afm/image6816615-450x450.jpg\"]" )
     public WebElement productTV;
+  
+   @FindBy(xpath = "//button[@class='button-cart'][contains(@onclick,'5736703')]")
+    public WebElement addProductHomepage;
+
+
+    @FindBy(xpath = "//div[@id='cart']")
+    public WebElement cartIcon;
 
 
     public void setCurrency(String currency) {
@@ -30,6 +39,7 @@ public class HomePage extends BasePage{
         }
         BrowserUtils.waitFor(2);
     }
+  
     public void productPriceWithSymbol(String currency, String symbol) {
         BrowserUtils.scrollToElement(televisions);
         if(currency.contains("Euro")) {
@@ -41,6 +51,13 @@ public class HomePage extends BasePage{
         }
     }
 
+      public void hoverOverCategory() {
+        WebElement categoryBox = Driver.get().findElement(By.xpath("//span[text()='Category']"));
+        BrowserUtils.hover(categoryBox);
+    }
 
-
+      public void clickSubMenu(String subMenuName){
+      WebElement subCategory = Driver.get().findElement(By.xpath("//a[text()='"+subMenuName+"']"));
+       subCategory.click();
+   }
 }

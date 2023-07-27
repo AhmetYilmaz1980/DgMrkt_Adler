@@ -13,7 +13,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/euroTech/stepDefs",
         dryRun = false,
+
         tags = "@neglogin"
+
 )
 
 public class CukesRunner {

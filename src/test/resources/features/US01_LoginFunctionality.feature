@@ -10,9 +10,8 @@ Feature: Login DgMrkt on Homepage
 
 
     Examples:
-      | email          | password     |
-      | ali1@gmail.com | galatasaray. |
-
+      | email                    | password |
+      | ali1@gmail.com | galatasaray.  |
 
   @neglogin
   Scenario Outline: Negative Login Test
@@ -34,6 +33,3 @@ Feature: Login DgMrkt on Homepage
       | umut51088@gmail.com |             |
       | umut51088@gmail.com | 2574dGlogin |
       |                     | 2574dGlogin |
-      | umut51088@gmail.com | 2574dGlogin |
-      |                     |             |
-
