@@ -13,7 +13,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/euroTech/stepDefs",
         dryRun = false,
-        tags = "@smoke"
+
+        tags = "@neglogin"
 
 )
 
