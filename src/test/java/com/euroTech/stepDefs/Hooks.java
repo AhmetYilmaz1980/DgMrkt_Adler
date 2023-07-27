@@ -16,7 +16,7 @@ public class Hooks {
     SecurityPage securityPage = new SecurityPage();
     @Before
     public void setUp() {
-        Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.get().manage().window().maximize();
         Driver.get().get(ConfigurationReader.get("url"));
         BrowserUtils.waitFor(2);

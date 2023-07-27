@@ -1,4 +1,4 @@
-@US01
+@B7DGMRT-1
 Feature: Login DgMrkt on Homepage
 
   @B7DGMRT-28

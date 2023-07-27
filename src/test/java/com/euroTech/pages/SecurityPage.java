@@ -1,6 +1,5 @@
 package com.euroTech.pages;
 
-
 import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.ConfigurationReader;
 import org.openqa.selenium.WebElement;
@@ -27,6 +26,4 @@ public class SecurityPage extends BasePage{
         BrowserUtils.waitFor(2);
         newsLetterClosedButton.click();
     }
-
-
 }

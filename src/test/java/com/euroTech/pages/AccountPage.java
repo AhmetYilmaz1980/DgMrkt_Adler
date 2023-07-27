@@ -16,6 +16,7 @@ public class AccountPage extends BasePage {
     @FindBy(xpath = "//i[@class='fa fa-home']")
     public WebElement homeButton;
 
+
     public void selectButtonFromAccountPage(String buttonName) {
         Driver.get().findElement(By.xpath("//a[text()='" + buttonName + "']")).click();
     }
