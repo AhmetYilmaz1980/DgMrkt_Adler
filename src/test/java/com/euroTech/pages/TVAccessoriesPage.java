@@ -1,5 +1,4 @@
 package com.euroTech.pages;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -16,5 +15,4 @@ public class TVAccessoriesPage extends BasePage{
 
     @FindBy(xpath = "//h1[text()='TV Accessories']")
     public WebElement tvAccessoriesText;
-
 }

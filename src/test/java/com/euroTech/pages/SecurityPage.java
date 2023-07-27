@@ -31,6 +31,4 @@ public class SecurityPage extends BasePage{
         BrowserUtils.waitFor(2);
         newsLetterClosedButton.click();
     }
-
-
 }
