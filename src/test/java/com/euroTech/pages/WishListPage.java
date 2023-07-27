@@ -72,4 +72,7 @@ public class WishListPage extends BasePage {
         boolean isProductDeleted = deletedItem.isDisplayed();
         assertTrue(isProductDeleted);
     }
+    @FindBy(xpath = "//div[@class='swiper-container single-slides-451 swiper-container-horizontal']//div[@class='product-thumb transition swiper-slide swiper-slide-visible swiper-slide-next']//button[@title='Add to Wish List']")
+    public WebElement addProductToWishList;
+
 }

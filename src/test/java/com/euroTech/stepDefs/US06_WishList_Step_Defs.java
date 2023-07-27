@@ -56,4 +56,9 @@ public class US06_WishList_Step_Defs {
 
     @Then("The user verify that the product has been deleted")
     public void the_user_verify_that_the_product_has_been_deleted() { wishListPage.verifyProductDeleted(); }
+
+    @Then("The user is able to add a product to the wish list")
+    public void the_user_is_able_to_add_product_to_the_wish_list() {
+        wishListPage.addProductToWishList.click();
+    }
 }

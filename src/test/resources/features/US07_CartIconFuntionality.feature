@@ -1,7 +1,7 @@
 @B7DGMRT-7
 Feature: The Functionality of the Cart Icon
 
-  @cart
+  @B7DGMRT-88
   Scenario: The user should be able to verify if there is any product in the cart.
     Given The user is on the home page
     When The user clicks to My Account
@@ -11,7 +11,7 @@ Feature: The Functionality of the Cart Icon
     Then The user is able to click the Cart Icon
     Then The user is able to receive a verify message that there isn't any product in the cart.
 
-    @cart
+    @B7DGMRT-89
   Scenario: The user should be able to add products to the cart and see them in the cart.
     Given The user is on the home page
     When The user clicks to My Account
@@ -22,7 +22,7 @@ Feature: The Functionality of the Cart Icon
     And The user is able to click the Cart Icon
     Then The user is able to see the product added to the cart
 
-  @cart
+  @B7DGMRT-90
   Scenario Outline: The user should be able to see the the products added to the cart by clicking the cart icon.
     Given The user is on the home page
     When The user clicks to My Account
@@ -45,7 +45,7 @@ Feature: The Functionality of the Cart Icon
       | Networking      | 7651328  |
 
 
-  @cart
+  @B7DGMRT-91
   Scenario: The user should be able to continue check out and order the products successfully.
     Given The user is on the home page
     When The user clicks to My Account
