@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CheckoutPage extends BasePage {
+public class CheckoutPurchPage extends BasePage {
     @FindBy(css = "[id=\"button-payment-address\"]")
     public WebElement continueBillingAddress;
 
