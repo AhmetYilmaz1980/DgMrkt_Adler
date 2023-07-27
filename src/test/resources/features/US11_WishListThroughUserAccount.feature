@@ -1,4 +1,4 @@
-@wishList
+@B7DGMRT-11
 Feature: As a user, I should be able to modify My wish list by clicking the Wish List tab under the My Account module.
 
   Background: As a user I should be able reach wish list on My wish list page
@@ -11,26 +11,20 @@ Feature: As a user, I should be able to modify My wish list by clicking the Wish
     Then Verify that the user is on the AccountPage
     And The user clicks "Wish List" from AccountPage
 
-  @wishList
+  @B7DGMRT-102
   Scenario: The user should be able to see products in the wish list
     Then The user verifies the product is in wish list
 
-  @wishList
+  @B7DGMRT-104
   Scenario: The user should be able to add products to cart
-    And The user sees and clicks cart button
-    Then The user verify that the "Fitbit Aria Air Smart Bathroom Scale" has been added
+    And The user clicks cart button on the wish list page
+    Then The user verifies that the product has been added
 
-  @wishList
+  @B7DGMRT-105
   Scenario: The user should be able to delete products from wish list
-    And The user scrolls down
-    And The user sees and clicks delete button
+    And The user clicks remove button to remove the product button
     And The user updates wishlist
-    Then The user verify that the product has been deleted
+    Then The user verifies that the product has been deleted
 
 
 
-
-
-  #2-Verify that the user should be able to add the products from wish list to cart
-
-  #3-Verify that the User should be able to delete the products from wish list
