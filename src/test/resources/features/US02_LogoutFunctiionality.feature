@@ -1,6 +1,8 @@
+@B7DGMRT-2
 Feature: Logout Funcionality
 
-  @logout
+
+  @B7DGMRT-77
   Scenario Outline: Logout Test
     * The user is on the home page
     * The user clicks to My Account
@@ -16,7 +18,7 @@ Feature: Logout Funcionality
       | ali1@gmail.com | galatasaray. |
 
 
-  @logout
+  @B7DGMRT-78
   Scenario Outline: Logout Test on My account page
     * The user is on the home page
     * The user clicks to My Account
