@@ -1,6 +1,4 @@
 package com.euroTech.pages;
-
-
 import com.euroTech.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -26,8 +24,6 @@ public class CartIconPage extends BasePage {
         Driver.get().findElement(By.xpath("//button[contains(@onclick,'"+products+"')][@title='Add to Cart']")).click();
 
     }
-
-
 
 }
 

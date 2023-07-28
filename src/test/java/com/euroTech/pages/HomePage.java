@@ -23,7 +23,6 @@ public class HomePage extends BasePage{
    @FindBy(xpath = "//button[@class='button-cart'][contains(@onclick,'5736703')]")
     public WebElement addProductHomepage;
 
-
     @FindBy(xpath = "//div[@id='cart']")
     public WebElement cartIcon;
 
