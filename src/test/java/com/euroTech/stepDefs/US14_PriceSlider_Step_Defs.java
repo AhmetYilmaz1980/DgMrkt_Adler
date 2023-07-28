@@ -1,19 +1,12 @@
 package com.euroTech.stepDefs;
 
 import com.euroTech.pages.SubCategorysPage;
-import com.euroTech.pages.HomePage;
 import com.euroTech.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class US14_PriceSlider_Step_Defs {
-    HomePage homePage = new HomePage();
     SubCategorysPage subCategorysPage = new SubCategorysPage();
-    @When("The user hover over category and select {string}.")
-    public void the_user_hover_over_category_and_select(String subcategory) {
-        homePage.hoverOverCategory();
-        homePage.clickSubMenu(subcategory);
-    }
     @Then("The user sees price slider.")
     public void the_user_sees_price_slider() {
         BrowserUtils.verifyElementDisplayed(subCategorysPage.priceSlider);
