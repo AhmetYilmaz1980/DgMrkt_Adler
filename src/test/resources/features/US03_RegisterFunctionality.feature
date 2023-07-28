@@ -1,7 +1,6 @@
 @B7DGMRT-3
 Feature: User Register Functionality
 
-
   Background: Click on My User Account and Register button
     Given The user clicks on the My Account and Register section
 
