@@ -72,4 +72,19 @@ public class WishListPage extends BasePage {
         boolean isProductDeleted = deletedItem.isDisplayed();
         assertTrue(isProductDeleted);
     }
+    @FindBy(xpath = "//button[@class='button-wishlist'][contains(@onclick,'5736703')]")
+    public WebElement productToWishList;
+
+    @FindBy(xpath = "//td[@class='text-left']//a")
+    public WebElement addToCartIconOnWishListPage;
+
+    @FindBy(css = ".btn-group.btn-block")
+    public WebElement cartIconOnTheWishListPage;
+    @FindBy(xpath = "//td[@class='text-left']//a")
+    public WebElement productInCartVerification;
+    @FindBy(xpath = "//a[@data-original-title='Remove']")
+    public WebElement removeButton;
+
+
+
 }

@@ -12,7 +12,7 @@ public class US07_CartIconFunctionality_Step_Defs {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     CartIconPage cartIconPage = new CartIconPage();
-    CheckOutPage checkOutPage = new CheckOutPage();
+    CheckoutPurchPage checkOutPage = new CheckoutPurchPage();
     SecurityPage securityPage= new SecurityPage();
 
 
@@ -21,7 +21,6 @@ public class US07_CartIconFunctionality_Step_Defs {
         BrowserUtils.verifyElementDisplayed(cartIconPage.firstProduct);
 
     }
-
     @When("The user is able to add a product to the cart")
     public void the_user_is_able_to_add_a_to_the_cart() {
         homePage.addProductHomepage.click();

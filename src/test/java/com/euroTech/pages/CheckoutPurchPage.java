@@ -27,6 +27,7 @@ public class CheckoutPurchPage extends BasePage {
     @FindBy(css = "[id=\"button-confirm\"]")
     public WebElement confirmButton;
 
+
     public void totalPriceWithSymbol(String currency, String symbol) {
         BrowserUtils.scrollToElement(totalPrice);
         if (currency.contains("Euro")) {
@@ -37,8 +38,20 @@ public class CheckoutPurchPage extends BasePage {
             ;
         } else if (currency.contains("Dollar")) {
             Assert.assertTrue(totalPrice.getText().contains(symbol));
-            ;
         }
 
     }
+    @FindBy(xpath = "//input[@id='button-payment-address']")
+    public WebElement continueButton;
+    @FindBy(xpath = "//input[@id='button-shipping-address']")
+    public WebElement continueShippingAddress;
+    @FindBy(xpath = "//input[@id='button-shipping-method']")
+    public WebElement continueShippingMethod;
+
+    @FindBy(xpath = "//input[@type='checkbox']")
+    public WebElement checkbox;
+    @FindBy(xpath = "//div[@id='content']//p[1]")
+    public WebElement successfulOrderMessage;
+    @FindBy(xpath = "//div[@class='pull-right']")
+    public WebElement continueAfterOrderButton;
 }
