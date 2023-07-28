@@ -127,7 +127,6 @@ public class SubCategorysPage extends BasePage {
         Integer secondValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
         Assert.assertTrue(ersteValue < secondValue);
     }
-    // Bu metod ok test case 2 icin  FOR ile olusturuldu
     public void setSpecificPriceRange(int minPrice, int maxPrice) {
         Driver.get().navigate().refresh();
         Integer minValue = Integer.valueOf(inputMinValue.getAttribute("value"));
@@ -141,7 +140,6 @@ public class SubCategorysPage extends BasePage {
             BrowserUtils.waitFor(1);
         }
     }
-
     public void verifySpecifiedPriceRange(Integer minValue, Integer maxValue) {
         Integer minActualValue = Integer.valueOf(inputMinValue.getAttribute("value"));
         Integer maxActualValue = Integer.valueOf(inputMaxValue.getAttribute("value"));
@@ -155,7 +153,6 @@ public class SubCategorysPage extends BasePage {
         BrowserUtils.waitFor(3);
         WebElement viewIcon = Driver.get().findElement(By.xpath("//div[starts-with(@class,'btn-group btn-group')]/button[6]"));
         viewIcon.click();
-        ////button[@onclick="category_view.changeView('list', 0, 'btn-list')"]
     }
 
     public void verifyProduct() {
@@ -173,9 +170,7 @@ public class SubCategorysPage extends BasePage {
             Assert.assertTrue(minValue<=result & maxValue>=result);
         }
     }
-
     // elif's product view icon
-
     public void clickProductViewIcon(String viewOption) {
         WebElement viewIcon = Driver.get().findElement(By.xpath("//button[@onclick=\"category_view.changeView('"+viewOption+"')\"]"));
         viewIcon.click();
