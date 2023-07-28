@@ -7,8 +7,7 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 
 import java.io.IOException;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class US03_RegisterFunctionality_StepDefs {
     RegisterAccountPage registerAccountPage = new RegisterAccountPage();
@@ -20,7 +19,7 @@ public class US03_RegisterFunctionality_StepDefs {
 
     @When("The user enters {string} and {string} and {string} and {string} and {string} and {string}")
     public void the_user_enters_and_and_and_and_and(String firstName, String lastName, String email, String telephone, String password, String passwordConfirm) {
-        registerAccountPage.register(firstName, lastName, email, telephone, password, passwordConfirm);
+        registerAccountPage.validRegister(firstName, lastName, email, telephone, password, passwordConfirm);
     }
 
     @When("The user clicks subscribe {string} and privacy policy")
@@ -53,12 +52,10 @@ public class US03_RegisterFunctionality_StepDefs {
         assertEquals(expectedText, actualText);
 
     }
-    @Then("Verify the warning message {string}")
-    public void verify_the_warning_message(String message) throws IOException {
-        BrowserUtils.waitFor(4);
-        BrowserUtils.getScreenshot(message);
-        String actualMessage = registerAccountPage.assertion(message);
-        assertEquals(message,actualMessage);
+    @Then("Verify the warning message {string} and {string}")
+    public void verify_the_warning_message_and(String expectedMessage, String confirmExpectedMessage) {
+        BrowserUtils.waitFor(6);
+        registerAccountPage.fullAssertionMessage(expectedMessage,confirmExpectedMessage);
     }
 
     @When("The user clicks subscribe {string}")
@@ -66,12 +63,9 @@ public class US03_RegisterFunctionality_StepDefs {
         Driver.get().findElement(By.xpath("//label[text()='" + yesNo + "']")).click();
     }
     @Then("Verify the warning message {string} below the screen")
-    public void verify_the_warning_message_below_the_screen(String message) throws IOException {
+    public void verify_the_warning_message_below_the_screen(String expectedMessage) throws IOException {
         BrowserUtils.scrollToElement(registerAccountPage.privacyPolicy);
         BrowserUtils.waitFor(4);
-        BrowserUtils.getScreenshot(message);
-        String actualMessage = registerAccountPage.assertion(message);
-        assertEquals(message,actualMessage);
+        registerAccountPage.privacyPolicyAssertion(expectedMessage);
     }
-
 }

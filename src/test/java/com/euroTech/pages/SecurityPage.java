@@ -1,6 +1,5 @@
 package com.euroTech.pages;
 
-
 import com.euroTech.utilities.BrowserUtils;
 import com.euroTech.utilities.ConfigurationReader;
 import org.openqa.selenium.WebElement;
@@ -20,6 +19,11 @@ public class SecurityPage extends BasePage{
     @FindBy(xpath = "//a[@class='a-close-newsletter']")
     public WebElement newsLetterClosedButton;
 
+
+    @FindBy(xpath = "//div[@class='popup-content']")
+    public WebElement newsLetterButton;
+
+
     public void entry(){
         email.sendKeys(ConfigurationReader.get("username"));
         password.sendKeys(ConfigurationReader.get("password"));
@@ -27,6 +31,4 @@ public class SecurityPage extends BasePage{
         BrowserUtils.waitFor(2);
         newsLetterClosedButton.click();
     }
-
-
 }
