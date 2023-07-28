@@ -14,7 +14,7 @@ public class US08_AccountPageStepDefs {
     EditInfoPage editInfoPage = new EditInfoPage();
 
     @Then("The user clicks {string} from MyAccountButton")
-    public void the_user_clicks_from_account_button(String selectedButton) {accountPage.selectButton(selectedButton);
+    public void     the_user_clicks_from_account_button(String selectedButton) {accountPage.selectButton(selectedButton);
     }
     @Then("The user logs into DgMrkt with valid credentials")
     public void the_user_logs_into_dg_mrkt_with_valid_credentials() {
