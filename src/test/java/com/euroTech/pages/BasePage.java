@@ -11,7 +11,6 @@ public abstract class BasePage {
     public BasePage() {
         PageFactory.initElements(Driver.get(),this);
     }
-
     @FindBy(xpath = "// span [text()='My Account']")
     public WebElement myAccountButton;
 
@@ -21,6 +20,17 @@ public abstract class BasePage {
     @FindBy(xpath= "//span[text()='My Account']")
     public WebElement accountButton;
 
+    @FindBy(xpath= "//span[.='Currency']")
+    public WebElement currencyButton;
+
+    @FindBy(xpath= "//button[.='€ Euro']")
+    public WebElement euroButton;
+
+    @FindBy(xpath= "//button[.='£ Pound Sterling']")
+    public WebElement poundButton;
+
+    @FindBy(xpath= "//button[.='$ US Dollar']")
+    public WebElement dollarButton;
 
     public void selectButton(String buttonName){
         accountButton.click();
