@@ -1,4 +1,4 @@
-@wip
+@B7DGMRT-3
 Feature: User Register Functionality
 
 
