@@ -44,6 +44,21 @@ public class US17_SortByFunction_Step_Defs {
     public void the_user_should_be_able_to_select_sort_by_in_on_the_sub_category(String optionText) {
     subCategorysPage.selectOptions(optionText);
 
+    }
+    /// *****************For loop ile Price Range verify
+    @When("The user scrolls the price slider to a specific price range {int} and {int}")
+    public void the_user_scrolls_the_price_slider_to_a_specific_price_range_and(Integer minValue, Integer maxValue) {
+        subCategorysPage.setSpecificPriceRange(minValue, maxValue);
+    }
+
+    @Then("Verify that the displayed products are within the selected price range.")
+    public void verify_that_the_displayed_products_are_within_the_selected_price_range() {
+        subCategorysPage.verifyProduct();
+
+    }
+    @Then("Verify that the specified price range {int} and {int} is visible.")
+    public void verify_that_the_specified_price_range_is_visible(Integer minValue, Integer maxValue) {
+        subCategorysPage.verifySpecifiedPriceRange(minValue, maxValue);
 
     }
 
