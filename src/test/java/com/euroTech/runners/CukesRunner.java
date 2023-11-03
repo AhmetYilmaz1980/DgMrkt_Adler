@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/euroTech/stepDefs",
         dryRun = false,
-        tags = "@B7DGMRT-7"
+        tags = "@B7DGMRT-17"
 
 )
 public class CukesRunner {
